@@ -27,13 +27,13 @@ img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gut)}
 h1,h2,h3{font-family:var(--f-head);margin:0;letter-spacing:-.01em;font-stretch:100%}
-h2{font-size:clamp(30px,3.6vw,46px);line-height:1.1;font-weight:700;text-wrap:balance}
+h2{font-size:clamp(32px,4.1vw,54px);line-height:1.06;font-weight:700;letter-spacing:-.025em;text-wrap:balance}
 h3{font-size:20px;line-height:1.25;font-weight:700}
 p{margin:0}
 .kicker{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--brand);margin-bottom:14px}
 .kicker::before{content:"";width:28px;height:2px;background:var(--spark)}
-.lead{font-size:17.5px;color:var(--ink-2);max-width:60ch}
-.sec{padding:110px 0}
+.lead{font-size:18px;line-height:1.7;color:var(--ink-2);max-width:58ch}
+.sec{padding:130px 0}
 .sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:end;margin-bottom:52px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 26px;border-radius:999px;font:600 15px var(--f-body);border:1.5px solid transparent;transition:background .2s,color .2s,border-color .2s}
 .btn svg{width:17px;height:17px}
@@ -61,43 +61,61 @@ p{margin:0}
 .nav .btn{min-height:44px;padding:0 22px;font-size:14.5px}
 
 /* hero carousel */
-.hero{position:relative;height:min(78vh,760px);min-height:560px;overflow:hidden;background:var(--brand-deep);color:#fff}
+.hero{position:relative;height:calc(100svh - 116px);max-height:900px;min-height:600px;overflow:hidden;background:var(--brand-deep);color:#fff}
 .slide{position:absolute;inset:0;opacity:0;transition:opacity 1s ease}
 .slide.on{opacity:1}
 .slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 7s ease-out}
 .slide.on img{transform:scale(1)}
 .slide::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(var(--shade),.86) 0%,rgba(var(--shade),.55) 42%,rgba(var(--shade),0) 75%)}
-.slide .wrap{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:center}
+.slide .wrap{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:center;padding-bottom:110px}
 .slide .tag{display:inline-flex;align-self:flex-start;align-items:center;gap:8px;font-size:13.5px;font-weight:600;padding:6px 14px;border-radius:999px;background:rgba(255,138,31,.16);border:1px solid rgba(255,138,31,.55);color:#FFD3AA;margin-bottom:22px}
-.slide h1,.slide .h1{font-family:var(--f-head);font-size:clamp(38px,5vw,68px);line-height:1.04;font-weight:800;max-width:15ch;letter-spacing:-.02em}
+.slide h1,.slide .h1{font-family:var(--f-head);font-size:clamp(40px,5.6vw,80px);line-height:1;font-weight:800;max-width:14ch;letter-spacing:-.03em}
 .slide p{font-size:18px;color:#DCDAF5;max-width:52ch;margin-top:20px}
 .slide .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
-.dots{position:absolute;z-index:3;left:0;right:0;bottom:30px}
-.dots .wrap{display:flex;gap:10px;align-items:center}
-.dots button{width:34px;height:4px;border:0;border-radius:2px;background:rgba(255,255,255,.35);cursor:pointer;padding:0}
-.dots button[aria-current=true]{background:var(--spark);width:56px}
-.dots span{margin-left:auto;font-size:13px;color:#C9C6EE}
+.dots{position:absolute;z-index:3;left:0;right:0;bottom:0;border-top:1px solid rgba(255,255,255,.16);background:linear-gradient(0deg,rgba(var(--shade),.55),transparent)}
+.dots .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.dots button{position:relative;text-align:left;background:none;border:0;color:rgba(255,255,255,.55);font:500 14px var(--f-body);padding:22px 20px 26px 0;cursor:pointer;transition:color .3s}
+.dots button b{display:block;font:700 13px var(--f-head);color:rgba(255,255,255,.45);margin-bottom:4px;transition:color .3s}
+.dots button::before{content:"";position:absolute;left:0;right:20px;top:-1px;height:2px;background:var(--spark);transform:scaleX(0);transform-origin:left}
+.dots button[aria-current=true]{color:#fff}
+.dots button[aria-current=true] b{color:var(--spark)}
+.dots button[aria-current=true]::before{animation:prog 6.5s linear forwards}
+@keyframes prog{to{transform:scaleX(1)}}
 
 /* stats */
-.stats{border-bottom:1px solid var(--line)}
-.stats .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
-.stat{padding:38px 24px;text-align:center;border-left:1px solid var(--line)}
+.stats{position:relative;z-index:5;background:#fff}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:#fff;border-radius:0 0 22px 22px;box-shadow:0 30px 60px -36px rgba(10,18,64,.35);border:1px solid var(--line);border-top:0;max-width:calc(var(--wrap) - 2*var(--gut));padding-inline:0}
+.stat{padding:40px 24px 42px;text-align:center;border-left:1px solid var(--line)}
 .stat:first-child{border-left:0}
 .stat b{display:block;white-space:nowrap;font:800 clamp(26px,3vw,42px)/1 var(--f-head);color:var(--brand);font-variant-numeric:tabular-nums}
 .stat b sup{font-size:.5em}
 .stat span{display:block;margin-top:10px;font-size:14.5px;color:var(--ink-2)}
 .stat.hl b{color:var(--spark)}
 
+
+/* engines we work on */
+.marquee{border-bottom:1px solid var(--line);overflow:hidden;padding:26px 0;background:#fff}
+.marquee .wrap{display:flex;align-items:center;gap:36px}
+.marquee small{flex:none;font-size:13px;font-weight:600;color:var(--ink-3)}
+.mq{flex:1;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.mq-track{display:flex;gap:56px;width:max-content;animation:mq 34s linear infinite}
+.mq-track span{font:700 22px var(--f-head);color:#B4B8CC;letter-spacing:-.01em;white-space:nowrap}
+.mq-track span em{font-style:normal;color:var(--brand)}
+@keyframes mq{to{transform:translateX(-50%)}}
 /* business cards */
-.biz{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
-.card{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:3/4.1;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate}
-.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .6s}
+.biz{display:flex;gap:16px;height:540px}
+.card{flex:1 1 0;min-width:0;transition:flex-grow .7s cubic-bezier(.2,.7,.2,1);position:relative;border-radius:var(--r);overflow:hidden;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate}
+.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .8s;filter:saturate(.9) contrast(1.05)}
 .card::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(var(--shade),0) 30%,rgba(var(--shade),.9) 100%)}
 .card:hover img{transform:scale(1.06)}
 .card .body{padding:26px}
 .card .no{font:700 13px var(--f-head);color:var(--spark)}
 .card h3{font-size:23px;margin-top:6px}
-.card p{font-size:14.5px;color:#D8D6F2;margin-top:8px}
+.card p{font-size:15px;color:#E3E6F5;margin-top:8px;max-width:34ch;opacity:0;max-height:0;transition:opacity .4s,max-height .5s}
+.card.active{flex-grow:2.6}
+.card.active p{opacity:1;max-height:120px;transition-delay:.25s}
+.card .more{opacity:.7}.card.active .more{opacity:1}
+.card h3{font-size:20px;transition:font-size .4s}.card.active h3{font-size:30px}
 .card .more{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:14px;font-weight:600}
 .card .more svg{width:16px;height:16px;transition:transform .2s}
 .card:hover .more svg{transform:translateX(4px)}
@@ -106,7 +124,7 @@ p{margin:0}
 
 /* bonded band */
 .band{position:relative;color:#fff;overflow:hidden;isolation:isolate}
-.band > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.band > img{position:absolute;left:0;right:0;top:-12%;width:100%;height:124%;object-fit:cover;z-index:-2;will-change:transform}
 .band::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(var(--shade),.93) 0%,rgba(var(--shade),.8) 45%,rgba(var(--shade),.35) 100%)}
 .band .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:64px;align-items:center;padding-block:110px}
 .band .kicker{color:#FFC48F}
@@ -210,7 +228,7 @@ p{margin:0}
 
 /* global band */
 .global{position:relative;color:#fff;isolation:isolate;overflow:hidden}
-.global > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.global > img{position:absolute;left:0;right:0;top:-12%;width:100%;height:124%;object-fit:cover;z-index:-2;will-change:transform}
 .global::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(var(--shade),.3),rgba(var(--shade),.85))}
 .global .wrap{padding-block:120px 70px}
 .global .kicker{color:#FFC48F}
@@ -238,7 +256,9 @@ p{margin:0}
 .mosaic figcaption{position:absolute;left:14px;bottom:14px;font-size:12.5px;font-weight:600;background:rgba(var(--shade),.8);color:#fff;padding:5px 12px;border-radius:999px}
 
 /* closing */
-.closing{background:linear-gradient(120deg,var(--brand-deep) 0%,var(--brand) 100%);color:#fff;overflow:hidden}
+.closing{position:relative;color:#fff;overflow:hidden;isolation:isolate;background:var(--brand-deep)}
+.closing > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;opacity:.5}
+.closing::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(110deg,rgba(var(--shade),.96) 0%,rgba(34,0,166,.82) 60%,rgba(34,0,166,.55) 100%)}
 .closing .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center;padding-block:90px}
 .closing h2{color:#fff}
 .closing .lead{color:#D8D6F2;margin-top:16px}
@@ -257,10 +277,16 @@ footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 footer a:hover{color:#fff}
 .legal{grid-column:1/-1;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(255,255,255,.1);padding-top:22px;font-size:13px}
 
+
+/* scroll reveal: only armed when JS runs and motion is allowed */
+.rv-on [data-rv]{opacity:0;transform:translateY(34px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv-on [data-rv].in{opacity:1;transform:none}
+.rv-on [data-rv="2"]{transition-delay:.1s}.rv-on [data-rv="3"]{transition-delay:.2s}.rv-on [data-rv="4"]{transition-delay:.3s}
 /* responsive */
 @media (max-width:1100px){
   .nav ul{display:none}.nav .btn{margin-left:auto}
-  .biz,.unit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .unit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .biz{height:460px}
   .band .wrap,.reman-grid,.cred-grid,.closing .wrap,.sec-head{grid-template-columns:1fr;gap:36px}
   .chain{grid-template-columns:repeat(4,minmax(0,1fr));row-gap:36px}.chain::before{display:none}
   footer .wrap{grid-template-columns:1fr 1fr}
@@ -268,12 +294,18 @@ footer a:hover{color:#fff}
 @media (max-width:720px){
   .topbar{display:none}
   .sec{padding:76px 0}
-  .hero{height:auto;min-height:640px}
+  .hero{height:auto;min-height:760px}
+  .slide .wrap{justify-content:flex-start;padding-top:56px;padding-bottom:120px}
+  .slide h1,.slide .h1{font-size:36px}
+  .slide p{font-size:16px}
+  .marquee small{display:none}
   .slide::after{background:linear-gradient(180deg,rgba(var(--shade),.5),rgba(var(--shade),.9))}
   .stats .wrap{grid-template-columns:1fr 1fr}
   .stat{padding:26px 10px}.stat:nth-child(3){border-left:0}.stat:nth-child(n+3){border-top:1px solid var(--line)}
-  .biz,.unit-grid,.steps,.perks{grid-template-columns:1fr}
-  .card{aspect-ratio:4/3.6}
+  .unit-grid,.steps,.perks{grid-template-columns:1fr}
+  .biz{flex-direction:column;height:auto}.card{flex:none;height:300px}.card p{opacity:1;max-height:none}.card h3,.card.active h3{font-size:23px;white-space:normal}
+  .dots button{font-size:12px;padding:16px 10px 18px 0}
+  .stats .wrap{border-radius:0}
   .route li{grid-template-columns:44px 1fr}.route em{grid-column:2}
   .app-grid{grid-template-columns:1fr;grid-template-rows:none}
   .app{min-height:260px}.app:first-child{grid-row:auto}
@@ -286,12 +318,20 @@ footer a:hover{color:#fff}
 
 /* intro: test-bench ignition, then bay doors open onto the hero */
 .intro{position:fixed;inset:0;z-index:100;pointer-events:auto}
-.intro .door{position:absolute;left:0;right:0;height:50.5%;background:#060A22;transition:transform .9s cubic-bezier(.76,0,.24,1)}
+.intro .door{position:absolute;left:0;right:0;height:50.5%;background:#060A22;overflow:hidden;transition:transform 1s cubic-bezier(.76,0,.24,1)}
+.intro .door .ph{position:absolute;left:0;right:0;height:100vh;height:100lvh}
+.intro .door.t .ph{top:0}.intro .door.b .ph{bottom:0}
+.intro .door .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 38%;transform:scale(1.12);animation:introZoom 3.2s cubic-bezier(.2,.7,.2,1) forwards}
+.intro .door .ph::after{content:"";position:absolute;inset:0;background:radial-gradient(55% 45% at 50% 62%,rgba(6,10,34,.25),rgba(6,10,34,.9) 100%),linear-gradient(180deg,rgba(6,10,34,.75) 0%,rgba(34,0,166,.15) 45%,rgba(6,10,34,.6) 100%)}
+@keyframes introZoom{to{transform:scale(1)}}
 .intro .door.t{top:0;border-bottom:1px solid rgba(255,138,31,.0)}
 .intro .door.b{bottom:0}
-.intro .door::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:56px 56px}
+.intro .door::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:64px 64px}
+.intro .sweep{position:absolute;top:0;bottom:0;width:30%;left:-30%;z-index:1;background:linear-gradient(90deg,transparent,rgba(255,190,120,.10),transparent);animation:sweep 2.2s .2s ease-in-out forwards}
+@keyframes sweep{to{left:100%}}
+.intro .cap{margin-top:26px;font-size:13px;letter-spacing:.06em;color:#C9C6EE;opacity:0;animation:inUp .5s .5s ease forwards}
 .intro .seam{position:absolute;left:0;right:0;top:50%;height:2px;margin-top:-1px;background:linear-gradient(90deg,transparent,var(--spark) 20%,#FFE2B8 50%,var(--spark) 80%,transparent);transform:scaleX(0);opacity:0;z-index:2;box-shadow:0 0 24px 4px rgba(255,138,31,.7)}
-.intro .core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(520px,84vw);text-align:center;z-index:3;color:#fff;transition:opacity .35s,transform .35s}
+.intro .core{position:absolute;left:50%;top:27%;transform:translate(-50%,-50%);width:min(520px,84vw);text-align:center;z-index:3;color:#fff;transition:opacity .35s,transform .35s}
 .intro .core img{height:64px;width:auto;margin:0 auto 34px;opacity:0;transform:translateY(10px);animation:inUp .6s .1s ease forwards}
 .intro .row{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;color:#A9A6CF;opacity:0;animation:inUp .5s .3s ease forwards}
 .intro .row b{font:800 34px/1 var(--f-head);color:#fff;font-variant-numeric:tabular-nums}
@@ -326,12 +366,13 @@ footer a:hover{color:#fff}
 <body>
 
 <div class="intro" id="intro" aria-hidden="true" hidden>
-  <div class="door t"></div><div class="door b"></div><div class="seam"></div>
+  <div class="door t"><div class="ph"><img src="images/hero-genset.jpg" alt=""></div></div><div class="door b"><div class="ph"><img src="images/hero-genset.jpg" alt=""></div></div><div class="sweep"></div><div class="seam"></div>
   <div class="core">
     <img src="images/logo-white.png" alt="">
     <div class="row"><span>Load test</span><b id="introPct">0%</b></div>
     <div class="meter"><i id="introBar"></i></div>
     <div class="ticks"><span style="left:45.45%">50%</span><span style="left:63.6%">70%</span><span style="left:90.9%">100%</span><span style="left:100%">110%</span></div>
+    <p class="cap">Hainan Free Trade Port · Bonded overhaul · Remanufactured power</p>
   </div>
   <canvas id="introFx"></canvas>
   <button class="skip" id="introSkip" type="button">Skip intro</button>
@@ -386,7 +427,7 @@ footer a:hover{color:#fff}
     </div>
   </div>
   <div class="dots"><div class="wrap">
-    <button aria-label="Slide 1" aria-current="true"></button><button aria-label="Slide 2"></button><button aria-label="Slide 3"></button>
+    <button aria-current="true"><b>01</b>Bonded engine overhaul</button><button><b>02</b>Remanufactured generator sets</button><button><b>03</b>Power plant EPC and O&amp;M</button>
   </div></div>
 </section>
 
@@ -398,14 +439,16 @@ footer a:hover{color:#fff}
   <div class="stat hl"><b>No. 1</b><span>Off-zone bonded repair pilot in Hainan</span></div>
 </div></section>
 
+<section class="marquee" aria-label="Engines we work on"><div class="wrap"><small>Engines we overhaul and remanufacture</small><div class="mq"><div class="mq-track"><span><em>Cummins</em> KTA50</span><span><em>Cummins</em> QSK60</span><span><em>Cummins</em> QSK50</span><span><em>Caterpillar</em> 3512</span><span><em>Caterpillar</em> G3516H</span><span><em>MTU</em> 4000 Series</span><span><em>Cummins</em> NTA855</span><span><em>Jichai</em> 190 Series</span><span aria-hidden="true"><em>Cummins</em> KTA50</span><span aria-hidden="true"><em>Cummins</em> QSK60</span><span aria-hidden="true"><em>Cummins</em> QSK50</span><span aria-hidden="true"><em>Caterpillar</em> 3512</span><span aria-hidden="true"><em>Caterpillar</em> G3516H</span><span aria-hidden="true"><em>MTU</em> 4000 Series</span><span aria-hidden="true"><em>Cummins</em> NTA855</span><span aria-hidden="true"><em>Jichai</em> 190 Series</span></div></div></div></section>
+
 <!-- BUSINESS -->
 <section class="sec" id="about"><div class="wrap">
-  <div class="sec-head">
+  <div class="sec-head" data-rv>
     <div><div class="kicker">What we do</div><h2>Four ways we keep your power running</h2></div>
     <p class="lead">Repair the engines you already own, buy units that have been rebuilt and proven, or let us build and run the whole plant.</p>
   </div>
-  <div class="biz">
-    <a class="card star" href="#bonded"><img src="images/biz-bonded.jpg" alt="Engine overhaul in the workshop"><span class="flag">Only in Hainan</span>
+  <div class="biz" data-rv="2">
+    <a class="card star active" href="#bonded"><img src="images/biz-bonded.jpg" alt="Engine overhaul in the workshop"><span class="flag">Only in Hainan</span>
       <div class="body"><span class="no">01</span><h3>Bonded overhaul</h3><p>Duty-free repair and re-export for marine, genset and frac-truck engines.</p><span class="more">How it works <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div></a>
     <a class="card" href="#units"><img src="images/biz-reman.jpg" alt="Cummins generator set in the SeaSpark workshop">
       <div class="body"><span class="no">02</span><h3>Remanufactured gensets</h3><p>Used gas and diesel sets rebuilt, load-tested and certified.</p><span class="more">View units <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div></a>
@@ -431,7 +474,7 @@ footer a:hover{color:#fff}
       </div>
       <div class="cta"><a class="btn btn-spark" href="#contact">Request a free assessment</a><a class="btn btn-white" href="#contact">Ask about exchange engines</a></div>
     </div>
-    <div class="route">
+    <div class="route" data-rv="2">
       <ol>
         <li><div><h3>Contract and authorization</h3><p>Send model, hours and nameplate photos.</p></div><em>Your site</em></li>
         <li class="port"><div><h3>Bonded entry</h3><p>Clears into the bonded zone, no import duty.</p></div><em>Hainan port</em></li>
@@ -445,11 +488,11 @@ footer a:hover{color:#fff}
 
 <!-- UNITS -->
 <section class="sec units" id="units"><div class="wrap">
-  <div class="sec-head">
+  <div class="sec-head" data-rv>
     <div><div class="kicker">Products</div><h2>Remanufactured units, ready to ship</h2></div>
     <p class="lead">Cummins-powered sets rebuilt in Hainan and tested at 50, 70, 100 and 110% load before they leave our test bench.</p>
   </div>
-  <div class="unit-grid">
+  <div class="unit-grid" data-rv="2">
     <article class="unit"><div class="unit-img"><img src="images/unit-qsk60.jpg" alt="SS-QSK60-G8 remanufactured engine"><span>Remanufactured</span></div>
       <div class="unit-body"><small>Cummins QSK60</small><h3>SS-QSK60-G8</h3><div class="unit-pw"><b>1,800</b><span>kW</span></div>
       <div class="unit-spec"><span>Voltage<b>400 V</b></span><span>Load test<b>50–110%</b></span></div><a class="btn btn-line" href="#contact">Request a quote</a></div></article>
@@ -468,11 +511,11 @@ footer a:hover{color:#fff}
 
 <!-- REMAN -->
 <section class="sec" id="reman"><div class="wrap">
-  <div class="sec-head">
+  <div class="sec-head" data-rv>
     <div><div class="kicker">Remanufacturing standard</div><h2>Rebuilt, tested and certified, unit by unit</h2></div>
     <p class="lead">A used set is sold as found. Every SeaSpark unit is taken apart, rebuilt and proven on our test bench, with the evidence in your hands.</p>
   </div>
-  <div class="reman-grid">
+  <div class="reman-grid" data-rv="2">
     <ol class="steps">
       <li><figure><img src="images/step-1.jpg" alt="Technician testing engine components"></figure><div class="t"><h3>Classification, disassembly and testing</h3><p>Components separated, inspected and screened, with a written classification report.</p></div></li>
       <li><figure><img src="images/step-2.jpg" alt="Technician repairing electrical systems"></figure><div class="t"><h3>Component repair and refurbishment</h3><p>Precision repair of crankshafts and stators; filters, sensors and wear parts replaced.</p></div></li>
@@ -499,11 +542,11 @@ footer a:hover{color:#fff}
 
 <!-- APPLICATIONS -->
 <section class="sec apps" id="apps"><div class="wrap">
-  <div class="sec-head">
+  <div class="sec-head" data-rv>
     <div><div class="kicker">Solutions</div><h2>Power for the fuels and sites others skip</h2></div>
     <p class="lead">Most exporters only sell diesel sets. We also build and run plants on associated gas, coalbed methane and biogas.</p>
   </div>
-  <div class="app-grid">
+  <div class="app-grid" data-rv="2">
     <a class="app" href="#contact"><img src="images/app-oilgas.jpg" alt="Oil pumpjacks in an oilfield"><div class="body"><span class="fuel">Associated gas, CBM</span><h3>Oil and gas fields</h3><p>Turn flared associated gas and coalbed methane into site power, and overhaul the power units that drive rigs and frac fleets.</p></div></a>
     <a class="app" href="#contact"><img src="images/app-marine.jpg" alt="Container ship at sea"><div class="body"><span class="fuel">Bonded repair</span><h3>Marine and shipping</h3><p>Main engines overhauled in Hainan while the vessel keeps trading.</p></div></a>
     <a class="app" href="#contact"><img src="images/app-datacenter.jpg" alt="Data center server aisle"><div class="body"><span class="fuel">Diesel or gas</span><h3>Data centers and hospitals</h3><p>Standby and prime power from load-tested units.</p></div></a>
@@ -514,11 +557,11 @@ footer a:hover{color:#fff}
 
 <!-- LIFECYCLE -->
 <section class="sec"><div class="wrap">
-  <div class="sec-head">
+  <div class="sec-head" data-rv>
     <div><div class="kicker">Full lifecycle</div><h2>One partner for the whole life of your equipment</h2></div>
     <p class="lead">Most suppliers sell a unit and stop there. We stay with it from the day we certify it to the day it retires.</p>
   </div>
-  <ol class="chain">
+  <ol class="chain" data-rv="2">
     <li><i><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 4h12v22H9z"/><path d="M12 10h6M12 15h6M12 20h3"/></svg></i><h3>Certify</h3><p>Inspect, grade and document every unit</p></li>
     <li><i><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 5a6 6 0 0 0-5 8L5 21l4 4 8-8a6 6 0 0 0 8-5l-4 1-2-2 1-4Z"/></svg></i><h3>Rebuild</h3><p>Refurbish or remanufacture, then load-test</p></li>
     <li><i><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 20h24l-3 5H6zM8 20V12h10v8M18 15h5l2 5"/></svg></i><h3>Export</h3><p>Documents and shipping to your port</p></li>
@@ -537,7 +580,7 @@ footer a:hover{color:#fff}
     <div class="kicker">Global reach</div>
     <h2>From Hainan Free Trade Port to the sites that need power</h2>
     <p class="lead">Shipping, customs and bonded logistics handled from our base on China's southern coast.</p>
-    <div class="regions">
+    <div class="regions" data-rv="2">
       <div><b>Southeast Asia</b><span>Ports, shipping and island grids</span></div>
       <div><b>Middle East</b><span>Oil, gas and frac fleets</span></div>
       <div><b>Africa</b><span>Mining and off-grid power</span></div>
@@ -559,7 +602,7 @@ footer a:hover{color:#fff}
       <li class="hot"><time>Aug 2026</time><h3>15 frac-truck engines under bond</h3><p>Overhauled for an overseas client, reported by China News Service.</p></li>
     </ol>
   </div>
-  <div class="mosaic">
+  <div class="mosaic" data-rv="2">
     <figure><img src="images/fac-lineup.jpg" alt="Range of SeaSpark generator sets"><figcaption>Gas and diesel generator sets</figcaption></figure>
     <figure><img src="images/biz-reman.jpg" alt="Generator set on the test floor"><figcaption>Test floor</figcaption></figure>
     <figure><img src="images/fac-line.jpg" alt="Component line"><figcaption>Component line</figcaption></figure>
@@ -567,7 +610,7 @@ footer a:hover{color:#fff}
 </div></section>
 
 <!-- CLOSING -->
-<section class="closing" id="contact"><div class="wrap">
+<section class="closing" id="contact"><img src="images/hero-offshore.jpg" alt=""><div class="wrap">
   <div>
     <h2>Send us the nameplate. We'll send back a plan.</h2>
     <p class="lead">An engineer replies within 24 hours with questions, a repair plan or a quote.</p>
@@ -594,10 +637,39 @@ footer a:hover{color:#fff}
   let cur = 0, t;
   const show = i => { cur = i; slides.forEach((s,k) => s.classList.toggle('on', k === i)); dots.forEach((d,k) => d.setAttribute('aria-current', k === i)); };
   const start = () => { if (!matchMedia('(prefers-reduced-motion: reduce)').matches) t = setInterval(() => show((cur + 1) % slides.length), 6500); };
+  const re = () => dots.forEach(d => { if (d.getAttribute('aria-current') === 'true') { d.style.animation = 'none'; void d.offsetWidth; d.style.animation = ''; } });
   dots.forEach((d,i) => d.addEventListener('click', () => { clearInterval(t); show(i); start(); }));
   start();
 })();
 
+
+/* panels, counters, parallax, reveal */
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const cards = [...document.querySelectorAll('.biz .card')];
+  cards.forEach(c => { const on = () => cards.forEach(x => x.classList.toggle('active', x === c)); c.addEventListener('mouseenter', on); c.addEventListener('focus', on); });
+  if (reduce || !('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('rv-on');
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('[data-rv]').forEach(el => io.observe(el));
+  const nums = document.querySelectorAll('.stat b');
+  const co = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return; co.unobserve(e.target);
+    const b = e.target, txt = b.firstChild.textContent, m = txt.match(/^([\d,]+)(.*)$/);
+    if (!m || txt === '2013') return;
+    const end = +m[1].replace(/,/g,''), t0 = performance.now();
+    const tick = now => { const k = Math.min(1,(now-t0)/1400), v = Math.round(end*(1-Math.pow(1-k,3)));
+      b.firstChild.textContent = v.toLocaleString('en-US') + m[2]; if (k < 1) requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+  }), {threshold:.6});
+  nums.forEach(n => co.observe(n));
+  const px = [...document.querySelectorAll('.band > img, .global > img')];
+  let ticking = false;
+  const run = () => { ticking = false; const h = innerHeight;
+    px.forEach(img => { const r = img.parentElement.getBoundingClientRect(); if (r.bottom < 0 || r.top > h) return;
+      const k = (r.top + r.height/2 - h/2) / (h + r.height); img.style.transform = `translateY(${(k*-16).toFixed(2)}%)`; }); };
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(run); } }, {passive:true}); run();
+})();
 /* intro: plays on every page load; click, Esc or Skip ends it */
 (() => {
   const el = document.getElementById('intro');
