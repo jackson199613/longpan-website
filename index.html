@@ -283,10 +283,59 @@ footer a:hover{color:#fff}
   footer .wrap{grid-template-columns:1fr}
   .band .wrap{padding-block:76px}
 }
+
+/* intro: test-bench ignition, then bay doors open onto the hero */
+.intro{position:fixed;inset:0;z-index:100;pointer-events:auto}
+.intro .door{position:absolute;left:0;right:0;height:50.5%;background:#060A22;transition:transform .9s cubic-bezier(.76,0,.24,1)}
+.intro .door.t{top:0;border-bottom:1px solid rgba(255,138,31,.0)}
+.intro .door.b{bottom:0}
+.intro .door::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:56px 56px}
+.intro .seam{position:absolute;left:0;right:0;top:50%;height:2px;margin-top:-1px;background:linear-gradient(90deg,transparent,var(--spark) 20%,#FFE2B8 50%,var(--spark) 80%,transparent);transform:scaleX(0);opacity:0;z-index:2;box-shadow:0 0 24px 4px rgba(255,138,31,.7)}
+.intro .core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(520px,84vw);text-align:center;z-index:3;color:#fff;transition:opacity .35s,transform .35s}
+.intro .core img{height:64px;width:auto;margin:0 auto 34px;opacity:0;transform:translateY(10px);animation:inUp .6s .1s ease forwards}
+.intro .row{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;color:#A9A6CF;opacity:0;animation:inUp .5s .3s ease forwards}
+.intro .row b{font:800 34px/1 var(--f-head);color:#fff;font-variant-numeric:tabular-nums}
+.intro .row b.hot{color:var(--spark)}
+.intro .meter{position:relative;height:6px;border-radius:3px;background:rgba(255,255,255,.1);margin-top:14px;opacity:0;animation:inUp .5s .3s ease forwards}
+.intro .meter i{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:3px;background:linear-gradient(90deg,var(--brand-2),var(--spark));box-shadow:0 0 16px rgba(255,138,31,.6)}
+.intro .ticks{position:relative;height:22px;margin-top:8px;font-size:11.5px;color:#7F7BA8;opacity:0;animation:inUp .5s .3s ease forwards}
+.intro .ticks span{position:absolute;transform:translateX(-50%);transition:color .2s}
+.intro .ticks span:nth-child(3){transform:translateX(-80%)}.intro .ticks span:last-child{transform:translateX(-60%)}
+.intro .ticks span.on{color:#fff}
+.intro canvas{position:absolute;inset:0;width:100%;height:100%;z-index:4;pointer-events:none}
+.intro .skip{position:absolute;right:max(20px,env(safe-area-inset-right,0px));bottom:max(20px,env(safe-area-inset-bottom,0px));z-index:5;background:none;border:1px solid rgba(255,255,255,.25);color:#C9C6EE;font:500 13px var(--f-body);padding:8px 14px;border-radius:999px;cursor:pointer}
+.intro .skip:hover{color:#fff;border-color:#fff}
+.intro.go .core{opacity:0;transform:translate(-50%,-50%) scale(.96)}
+.intro.go .seam{animation:seam .45s ease forwards}
+.intro.open .door.t{transform:translateY(-101%)}
+.intro.open .door.b{transform:translateY(101%)}
+.intro.open .seam{animation:seamOut .35s ease forwards}
+.intro.open .skip{opacity:0}
+@keyframes inUp{to{opacity:1;transform:none}}
+@keyframes seam{0%{transform:scaleX(0);opacity:1}100%{transform:scaleX(1);opacity:1}}
+@keyframes seamOut{0%{transform:scaleX(1);opacity:1}100%{transform:scaleX(1);opacity:0}}
+/* hero copy rises in after the doors open */
+.has-intro .slide.on .tag,.has-intro .slide.on h1,.has-intro .slide.on p,.has-intro .slide.on .cta{opacity:0;transform:translateY(24px)}
+.has-intro .slide.on img{transform:scale(1.14)}
+.intro-done .slide.on .tag,.intro-done .slide.on h1,.intro-done .slide.on p,.intro-done .slide.on .cta{opacity:1;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.intro-done .slide.on h1{transition-delay:.08s}.intro-done .slide.on p{transition-delay:.18s}.intro-done .slide.on .cta{transition-delay:.28s}
+.intro-done .slide.on img{transform:scale(1);transition:transform 2.4s cubic-bezier(.2,.7,.2,1)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
+
+<div class="intro" id="intro" aria-hidden="true" hidden>
+  <div class="door t"></div><div class="door b"></div><div class="seam"></div>
+  <div class="core">
+    <img src="images/logo-white.png" alt="">
+    <div class="row"><span>Load test</span><b id="introPct">0%</b></div>
+    <div class="meter"><i id="introBar"></i></div>
+    <div class="ticks"><span style="left:45.45%">50%</span><span style="left:63.6%">70%</span><span style="left:90.9%">100%</span><span style="left:100%">110%</span></div>
+  </div>
+  <canvas id="introFx"></canvas>
+  <button class="skip" id="introSkip" type="button">Skip intro</button>
+</div>
 
 <div class="topbar"><div class="wrap">
   <span><b>info@lpseaspark.com</b>WhatsApp <b>+86 193 8998 3512</b></span>
@@ -544,9 +593,50 @@ footer a:hover{color:#fff}
   const slides = [...document.querySelectorAll('.slide')], dots = [...document.querySelectorAll('.dots button')];
   let cur = 0, t;
   const show = i => { cur = i; slides.forEach((s,k) => s.classList.toggle('on', k === i)); dots.forEach((d,k) => d.setAttribute('aria-current', k === i)); };
-  const start = () => { if (!matchMedia('(prefers-reduced-motion: reduce)').matches) t = setInterval(() => show((cur + 1) % slides.length), 6000); };
+  const start = () => { if (!matchMedia('(prefers-reduced-motion: reduce)').matches) t = setInterval(() => show((cur + 1) % slides.length), 6500); };
   dots.forEach((d,i) => d.addEventListener('click', () => { clearInterval(t); show(i); start(); }));
   start();
+})();
+
+/* intro: plays on every page load; click, Esc or Skip ends it */
+(() => {
+  const el = document.getElementById('intro');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || location.hash === '#nointro') return;
+  const root = document.documentElement; root.classList.add('has-intro');
+  el.hidden = false; document.body.style.overflow = 'hidden';
+  const pct = document.getElementById('introPct'), bar = document.getElementById('introBar'), ticks = [...el.querySelectorAll('.ticks span')];
+  const cv = document.getElementById('introFx'), ctx = cv.getContext('2d');
+  const dpr = Math.min(devicePixelRatio || 1, 2); cv.width = innerWidth * dpr; cv.height = innerHeight * dpr; ctx.scale(dpr, dpr);
+  let parts = [], done = false, raf;
+  const burst = (x, y, n) => { for (let i = 0; i < n; i++) { const a = Math.random() * Math.PI * 2, v = 2 + Math.random() * 7; parts.push({x, y, vx: Math.cos(a) * v, vy: Math.sin(a) * v - 2, life: 0, max: 40 + Math.random() * 40, r: 1 + Math.random() * 2}); } };
+  const fx = () => {
+    ctx.clearRect(0, 0, innerWidth, innerHeight);
+    ctx.shadowColor = 'rgba(255,150,40,.9)'; ctx.shadowBlur = 10;
+    parts = parts.filter(p => p.life < p.max);
+    for (const p of parts) { p.x += p.vx; p.y += p.vy; p.vy += .12; p.vx *= .985; p.life++;
+      const a = 1 - p.life / p.max; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283); ctx.fillStyle = `rgba(255,${160 + 80 * a | 0},70,${a})`; ctx.fill(); }
+    if (parts.length || !done) raf = requestAnimationFrame(fx);
+  };
+  fx();
+  const finish = () => {
+    if (done) return; done = true;
+    el.classList.add('go');
+    setTimeout(() => { el.classList.add('open'); root.classList.add('intro-done'); }, 380);
+    setTimeout(() => { el.remove(); document.body.style.overflow = ''; root.classList.remove('has-intro'); }, 1500);
+  };
+  const DUR = 1700, t0 = performance.now(), stops = [50, 70, 100, 110];
+  const step = now => {
+    if (done) return;
+    const k = Math.min(1, (now - t0) / DUR), e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2, v = Math.round(e * 110);
+    pct.textContent = v + '%'; pct.classList.toggle('hot', v > 100); bar.style.width = (e * 100) + '%';
+    ticks.forEach((t, i) => { if (v >= stops[i] && !t.classList.contains('on')) { t.classList.add('on'); const r = bar.getBoundingClientRect(); burst(r.right, r.top + 3, i === 3 ? 70 : 14); } });
+    if (k < 1) requestAnimationFrame(step); else setTimeout(finish, 260);
+  };
+  requestAnimationFrame(step);
+  document.getElementById('introSkip').addEventListener('click', finish);
+  el.addEventListener('click', e => { if (e.target.id !== 'introSkip') finish(); });
+  addEventListener('keydown', e => { if (e.key === 'Escape') finish(); }, {once: true});
 })();
 </script>
 </body>
