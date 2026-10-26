@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LP SeaSpark | Bonded Overhaul and Remanufactured Power from Hainan</title>
+<meta name="description" content="Hainan Longpan Oilfield Technology (LP SeaSpark): duty-free bonded engine overhaul in Hainan Free Trade Port, load-tested remanufactured generator sets, and power plant EPC, investment and O&M.">
+<meta name="theme-color" content="#050819">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ink:#050819; --ink-2:#0A1030; --ink-3:#121A4A;
+  --indigo:#3D2EE6; --indigo-2:#7A70FF; --indigo-3:#A9A3FF;
+  --spark:#FFB23F; --spark-2:#FF7A1A;
+  --steel:#9AA3C7; --steel-2:#646D96;
+  --paper:#ECEEF6; --white:#fff; --text:#0A0F2E; --text-2:#4A5175;
+  --line-d:rgba(154,163,199,.16); --line-l:#D3D7E6;
+  --f-disp:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --wrap:1280px; --gut:clamp(16px,4vw,48px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--f-body);font-size:16px;line-height:1.6;color:var(--text);background:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+svg{display:block}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gut)}
+h1,h2,h3{font-family:var(--f-disp);margin:0;letter-spacing:-.015em}
+h2{font-size:clamp(32px,4.4vw,60px);line-height:1.02;font-weight:800;font-stretch:120%;text-wrap:balance}
+h3{font-size:20px;line-height:1.2;font-weight:700;font-stretch:108%}
+p{margin:0}
+.num{font-family:var(--f-disp);font-variant-numeric:tabular-nums}
+.dark{background:var(--ink);color:#fff}
+.light{background:var(--paper);color:var(--text)}
+.sub{font-size:18px;line-height:1.6;max-width:56ch}
+.dark .sub{color:#C3C9E4}
+.light .sub{color:var(--text-2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font:600 15.5px var(--f-body);border:1.5px solid transparent;transition:background .2s,border-color .2s}
+.btn svg{width:18px;height:18px}
+.btn-spark{background:var(--spark);color:#1A1205}
+.btn-spark:hover{background:#FFC468}
+.btn-ghost{border-color:rgba(255,255,255,.3);color:#fff}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+:focus-visible{outline:2px solid var(--spark);outline-offset:3px;border-radius:6px}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s}
+.nav.solid{background:rgba(5,8,25,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line-d)}
+.nav .wrap{display:flex;align-items:center;gap:32px;height:80px}
+.brand{display:flex;align-items:center;gap:12px;color:#fff}
+.brand-mark{width:36px;height:36px}
+.brand b{font-family:var(--f-disp);font-weight:800;font-stretch:118%;font-size:21px;letter-spacing:-.01em}
+.brand small{display:block;font-size:11.5px;color:var(--steel);font-weight:500;letter-spacing:.01em;margin-top:-2px}
+.nav ul{display:flex;gap:4px;list-style:none;margin:0 0 0 auto;padding:0}
+.nav ul a{display:block;padding:8px 13px;border-radius:8px;color:#D7DBF0;font-size:14.5px;font-weight:500}
+.nav ul a:hover{color:#fff;background:rgba(255,255,255,.07)}
+.nav .btn{min-height:44px;padding:0 20px;font-size:14.5px}
+.lang{font-size:14px;color:var(--steel);border:1px solid var(--line-d);border-radius:8px;padding:7px 11px}
+@media (max-width:1100px){.nav ul,.lang{display:none}.nav .btn{margin-left:auto}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;isolation:isolate;padding-top:136px}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;
+  background:radial-gradient(60% 50% at 50% 72%,rgba(61,46,230,.38),transparent 70%),radial-gradient(40% 40% at 88% 10%,rgba(122,112,255,.18),transparent 70%)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(var(--line-d) 1px,transparent 1px),linear-gradient(90deg,var(--line-d) 1px,transparent 1px);background-size:80px 80px;
+  mask-image:radial-gradient(70% 60% at 50% 30%,#000 10%,transparent 75%);-webkit-mask-image:radial-gradient(70% 60% at 50% 30%,#000 10%,transparent 75%)}
+#sparks{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.pilot{display:inline-flex;align-items:center;gap:10px;padding:7px 16px 7px 8px;border:1px solid rgba(255,178,63,.38);background:rgba(255,178,63,.07);border-radius:999px;font-size:14px;color:#FFE1AE}
+.pilot i{width:22px;height:22px;border-radius:50%;background:var(--spark);display:grid;place-items:center}
+.pilot i svg{width:12px;height:12px}
+.hero h1{margin-top:28px;font-size:clamp(36px,5.1vw,80px);line-height:.93;font-weight:900;font-stretch:125%;letter-spacing:-.03em}
+.hero h1 span{display:block;color:transparent;background:linear-gradient(90deg,#fff 0%,var(--indigo-3) 60%,var(--spark) 100%);-webkit-background-clip:text;background-clip:text}
+.hero-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:end;margin-top:34px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+.art{position:relative;margin-top:28px}
+.art svg{width:100%;height:auto;overflow:visible}
+.art .ln{fill:none;stroke-width:1.4}
+.co-box{fill:rgba(10,16,48,.86);stroke:rgba(122,112,255,.55);stroke-width:1.2}
+.co-t{font:700 15px var(--f-disp);font-stretch:108%;fill:#fff}
+.co-s{font:500 12.5px var(--f-body);fill:var(--steel)}
+.co-n{font:800 13px var(--f-disp);fill:var(--spark)}
+.pulse{animation:pulse 2.2s ease-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pulse{0%{transform:scale(.6);opacity:1}100%{transform:scale(2.8);opacity:0}}
+.facts{border-top:1px solid var(--line-d);margin-top:8px;background:linear-gradient(180deg,rgba(5,8,25,.2),rgba(5,8,25,.9))}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.fact{padding:28px 24px 32px;border-left:1px solid var(--line-d)}
+.fact:first-child{border-left:0;padding-left:0}
+.fact b{display:block;white-space:nowrap;font-family:var(--f-disp);font-weight:800;font-stretch:118%;font-size:clamp(24px,2.9vw,42px);line-height:1;font-variant-numeric:tabular-nums}
+.fact b sup{font-size:.5em;vertical-align:.7em}
+.fact span{display:block;margin-top:8px;color:var(--steel);font-size:14px}
+.fact.hl b{color:var(--spark)}
+
+/* ---------- bonded map ---------- */
+.why{position:relative;padding:130px 0 120px;overflow:hidden}
+.why-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:56px;align-items:center}
+.map svg{width:100%;height:auto;overflow:visible}
+.map .dots{fill:none;stroke:rgba(154,163,199,.34);stroke-width:3.3;stroke-linecap:round}
+.map .arc{fill:none;stroke:url(#arcg);stroke-width:2;stroke-dasharray:5 7;animation:flow 1.4s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-24}}
+.map .dest{fill:var(--indigo-2)}
+.map .dest-ring{fill:none;stroke:var(--indigo-2);stroke-width:1.2;opacity:.6}
+.map .lbl{font:600 15px var(--f-body);fill:#fff;paint-order:stroke;stroke:#050819;stroke-width:5px;stroke-linejoin:round}
+.map .lbl-s{font:400 12.5px var(--f-body);fill:var(--steel);paint-order:stroke;stroke:#050819;stroke-width:5px;stroke-linejoin:round}
+.map .home{fill:var(--spark)}
+.map .halo{fill:none;stroke:var(--spark);stroke-width:1.6}
+.why .def{margin-top:22px}
+.why-list{list-style:none;margin:34px 0 0;padding:0;display:grid;gap:0;border-top:1px solid var(--line-d)}
+.why-list li{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line-d);align-items:baseline}
+.why-list b{font-family:var(--f-disp);font-weight:800;font-stretch:115%;font-size:26px;color:var(--spark);line-height:1}
+.why-list span{color:#C3C9E4;font-size:15px}
+
+/* ---------- journey ---------- */
+.journey{padding:120px 0}
+.journey-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:56px;align-items:end}
+.track{position:relative;margin-top:72px}
+.track svg.rail{position:absolute;left:0;right:0;top:0;width:100%;height:120px;overflow:visible}
+.stops{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px;position:relative}
+.stop{padding-top:132px}
+.stop .pt{position:absolute;top:36px;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font:800 22px var(--f-disp);background:#fff;border:1.5px solid var(--line-l);color:var(--text);box-shadow:0 10px 30px -14px rgba(10,15,46,.4)}
+.stop.port .pt{background:var(--ink);color:var(--spark);border-color:var(--ink)}
+.stop .where{display:inline-block;font-size:12.5px;font-weight:600;color:var(--indigo);background:rgba(61,46,230,.08);padding:3px 10px;border-radius:999px;margin-bottom:12px}
+.stop p{color:var(--text-2);font-size:14.5px;margin-top:8px}
+.swap{margin-top:64px;display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;background:var(--ink);color:#fff;border-radius:24px;padding:30px 36px;position:relative;overflow:hidden}
+.swap::after{content:"";position:absolute;right:-120px;top:-160px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(61,46,230,.5),transparent 65%)}
+.swap svg{width:64px;height:64px;color:var(--spark)}
+.swap h3{font-size:24px;font-stretch:115%}
+.swap p{color:#C3C9E4;margin-top:6px;max-width:60ch}
+.swap .btn{position:relative;z-index:1}
+
+/* ---------- lifecycle ---------- */
+.cycle{position:relative;padding:130px 0;background:radial-gradient(70% 70% at 70% 50%,#18128A 0%,var(--ink-2) 55%,var(--ink) 100%);overflow:hidden}
+.cycle .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:64px;align-items:center}
+.ring-wrap{position:relative;width:min(100%,580px);aspect-ratio:1;margin-inline:auto}
+.ring-wrap svg{width:100%;height:100%;overflow:visible}
+.rn{cursor:pointer}
+.rn circle{fill:rgba(10,16,48,.9);stroke:rgba(122,112,255,.5);stroke-width:1.5;transition:fill .3s,stroke .3s}
+.rn text{font:700 13.5px var(--f-disp);fill:#fff;text-anchor:middle;pointer-events:none}
+.rn .n{font-size:20px;font-weight:800;fill:var(--indigo-3)}
+.rn.on circle{fill:var(--spark);stroke:var(--spark)}
+.rn.on text,.rn.on .n{fill:#1A1205}
+.rn:focus{outline:none}.rn:focus-visible circle{stroke:#fff;stroke-width:3}
+.ring-center{position:absolute;inset:26%;display:grid;place-content:center;text-align:center;gap:10px}
+.ring-center h3{font-size:26px;font-stretch:118%}
+.ring-center p{font-size:15px;color:#C3C9E4;line-height:1.5}
+.cycle-copy .sub{margin-top:22px}
+.chain{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
+.chain span{font-size:14px;padding:7px 14px;border-radius:999px;border:1px solid var(--line-d);color:#D7DBF0}
+
+/* ---------- reman ---------- */
+.reman{padding:130px 0}
+.reman-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:72px;align-items:start;margin-top:56px}
+.steps6{list-style:none;margin:0;padding:0;counter-reset:r;border-top:1px solid var(--line-l)}
+.steps6 li{counter-increment:r;display:grid;grid-template-columns:64px 1fr;gap:12px;padding:20px 0;border-bottom:1px solid var(--line-l)}
+.steps6 li::before{content:counter(r,decimal-leading-zero);font:800 26px/1.1 var(--f-disp);font-stretch:115%;color:var(--indigo)}
+.steps6 p{color:var(--text-2);font-size:14.5px;margin-top:4px}
+.loadcard{background:var(--ink);color:#fff;border-radius:28px;padding:36px;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px rgba(10,15,46,.6)}
+.loadcard::before{content:"";position:absolute;inset:auto -100px -200px auto;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(61,46,230,.45),transparent 65%)}
+.loadcard > *{position:relative}
+.loadcard h3{font-size:24px;font-stretch:115%}
+.loadcard > p{color:var(--steel);font-size:14.5px;margin-top:6px}
+.bars{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:end;height:240px;margin-top:32px;border-bottom:1px solid var(--line-d);position:relative}
+.rated{position:absolute;left:0;right:0;bottom:74.5%;height:0;border-top:1px dashed rgba(255,255,255,.45);font-size:12px;line-height:1;color:var(--steel);z-index:1}
+.rated span{position:relative;top:6px}
+.bar{display:flex;flex-direction:column;justify-content:end;align-items:center;gap:8px;height:100%}
+.bar i{display:block;width:100%;border-radius:12px 12px 4px 4px;background:linear-gradient(180deg,var(--indigo-2),var(--indigo));box-shadow:0 0 30px -6px rgba(122,112,255,.7)}
+.bar:last-child i{background:linear-gradient(180deg,var(--spark),var(--spark-2));box-shadow:0 0 34px -4px rgba(255,140,40,.8)}
+.bar b{font:800 22px var(--f-disp)}
+.bars-x{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:10px;font-size:13px;color:var(--steel);text-align:center}
+.plate{margin-top:30px;border-radius:14px;padding:20px 22px;background:linear-gradient(135deg,#C4C9DA,#F1F2F8 42%,#B3B9CD);color:#141936;border:1px solid #fff;box-shadow:inset 0 1px 0 #fff,0 16px 40px -14px rgba(0,0,0,.6);position:relative}
+.plate::before,.plate::after{content:"";position:absolute;top:11px;width:9px;height:9px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff,#7C83A3)}
+.plate::before{left:11px}.plate::after{right:11px}
+.plate-h{display:flex;justify-content:space-between;align-items:center;padding:0 14px;font:800 16px var(--f-disp);font-stretch:122%}
+.plate-h em{font-style:normal;font-size:13px;font-weight:700;color:#3D2EE6}
+.plate dl{display:grid;grid-template-columns:repeat(3,1fr);gap:10px 14px;margin:14px 0 0;padding:14px 14px 0;border-top:1px solid rgba(20,25,54,.22)}
+.plate dt{font-size:11.5px;color:#4A5175}
+.plate dd{margin:0;font:700 15.5px var(--f-disp)}
+.plate-cap{font-size:13px;color:var(--steel);margin-top:12px}
+
+/* ---------- products ---------- */
+.units{padding:130px 0;position:relative;overflow:hidden}
+.units::before{content:"";position:absolute;left:50%;top:0;width:1200px;height:600px;transform:translateX(-50%);background:radial-gradient(50% 50% at 50% 0%,rgba(61,46,230,.3),transparent 70%)}
+.units .wrap{position:relative}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:40px;flex-wrap:wrap}
+.unit-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:56px}
+.unit{border:1px solid var(--line-d);border-radius:24px;background:linear-gradient(180deg,rgba(18,26,74,.7),rgba(10,16,48,.5));padding:26px 24px 24px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:border-color .3s,transform .3s}
+.unit:hover{border-color:rgba(122,112,255,.6);transform:translateY(-4px)}
+.unit.flag{border-color:rgba(255,178,63,.45)}
+.unit-art{height:120px;margin:4px -6px 18px;color:var(--indigo-2);position:relative}
+.unit.flag .unit-art{color:var(--spark)}
+.unit-art svg{width:var(--sz,100%);height:100%;margin-inline:auto}
+.unit-art::after{content:"";position:absolute;left:10%;right:10%;bottom:-6px;height:16px;border-radius:50%;background:radial-gradient(closest-side,rgba(122,112,255,.35),transparent)}
+.unit-tag{font-size:12.5px;font-weight:600;color:var(--steel)}
+.unit h3{font-size:21px;font-stretch:112%;margin-top:4px}
+.unit-pw{display:flex;align-items:baseline;gap:6px;margin-top:16px}
+.unit-pw b{font:800 48px/1 var(--f-disp);font-stretch:118%;font-variant-numeric:tabular-nums}
+.unit-pw small{color:var(--steel);font-size:15px}
+.unit-spec{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line-d);font-size:12.5px;color:var(--steel)}
+.unit-spec b{display:block;color:#fff;font-size:14px;font-weight:600}
+.gas{margin-top:22px;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;padding:24px 30px;border-radius:20px;border:1px dashed rgba(255,178,63,.4);background:rgba(255,178,63,.04)}
+.gas p{color:#C3C9E4;max-width:72ch}
+.gas b{color:#fff}
+
+/* ---------- applications ---------- */
+.apps{padding:130px 0}
+.app-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:56px}
+.app{background:#fff;border:1px solid var(--line-l);border-radius:24px;padding:28px 26px;display:flex;flex-direction:column;min-height:330px;position:relative;overflow:hidden}
+.app svg{width:84px;height:84px;color:var(--indigo)}
+.app .fuel{position:absolute;right:20px;top:24px;font-size:12.5px;font-weight:600;color:#8A4B00;background:rgba(255,178,63,.18);padding:4px 10px;border-radius:999px}
+.app h3{margin-top:auto;padding-top:28px;font-size:22px;font-stretch:112%}
+.app p{color:var(--text-2);font-size:14.5px;margin-top:8px}
+.app.feature{background:var(--ink);color:#fff;border-color:var(--ink)}
+.app.feature svg{color:var(--spark)}
+.app.feature p{color:#C3C9E4}
+.app.feature .fuel{color:#1A1205;background:var(--spark)}
+
+/* ---------- milestones ---------- */
+.miles{padding:120px 0 110px}
+.tl{list-style:none;margin:64px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:relative}
+.tl::before{content:"";position:absolute;left:0;right:0;top:7px;height:2px;background:linear-gradient(90deg,var(--indigo-2),var(--spark))}
+.tl li{position:relative;padding:40px 24px 0 0}
+.tl li::before{content:"";position:absolute;top:0;left:0;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2px solid var(--indigo-2)}
+.tl li.hot::before{background:var(--spark);border-color:var(--spark);box-shadow:0 0 0 6px rgba(255,178,63,.2)}
+.tl time{font:800 30px/1 var(--f-disp);font-stretch:118%}
+.tl h3{font-size:16.5px;margin-top:12px;font-stretch:104%}
+.tl p{font-size:14px;color:var(--steel);margin-top:6px}
+
+/* ---------- closing ---------- */
+.close{position:relative;padding:140px 0 120px;overflow:hidden;text-align:center;isolation:isolate}
+.close::before{content:"";position:absolute;left:50%;bottom:-420px;width:1300px;height:820px;transform:translateX(-50%);z-index:-1;border-radius:50%;background:radial-gradient(closest-side,rgba(61,46,230,.65),rgba(61,46,230,.12) 60%,transparent)}
+.close h2{font-size:clamp(36px,5.6vw,84px);max-width:16ch;margin-inline:auto;font-stretch:122%}
+.close .sub{margin:24px auto 0;text-align:center}
+.ways{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:44px}
+.ways a{display:flex;align-items:center;gap:12px;padding:14px 22px;border:1px solid var(--line-d);border-radius:999px;background:rgba(255,255,255,.04);transition:border-color .2s}
+.ways a:hover{border-color:var(--indigo-2)}
+.ways a.main{background:var(--spark);color:#1A1205;border-color:var(--spark);font-weight:600}
+.ways svg{width:20px;height:20px}
+.ways span{font:700 16px var(--f-disp);font-stretch:106%}
+footer{border-top:1px solid var(--line-d);padding:40px 0 48px;color:var(--steel);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center}
+
+/* ---------- responsive ---------- */
+@media (max-width:1060px){
+  .why-grid,.journey-head,.cycle .wrap,.reman-grid{grid-template-columns:1fr;gap:40px}
+  .unit-grid,.app-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero-row{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .hero{padding-top:112px}
+  .hero h1{font-size:clamp(30px,8.6vw,44px);font-stretch:110%}
+  .brand small{display:none}
+  .art .co{display:none}
+  .facts .wrap{grid-template-columns:1fr 1fr}
+  .fact{padding:20px 14px 22px}
+  .fact:nth-child(3){border-left:0;padding-left:0}
+  .fact:nth-child(n+3){border-top:1px solid var(--line-d)}
+  .fact b{font-size:26px}
+  .why,.journey,.cycle,.reman,.units,.apps,.miles{padding:88px 0}
+  .why-list li{grid-template-columns:96px 1fr}
+  .track svg.rail{display:none}
+  .stops{grid-template-columns:1fr;gap:0}
+  .stop{padding:0 0 28px 84px;position:relative;min-height:84px}
+  .stop .pt{top:0;left:0;width:56px;height:56px;font-size:19px}
+  .stop:not(:last-child)::after{content:"";position:absolute;left:27px;top:62px;bottom:6px;width:2px;background:linear-gradient(var(--indigo-2),var(--spark))}
+  .swap{grid-template-columns:1fr;padding:26px}
+  .unit-grid,.app-grid{grid-template-columns:1fr}
+  .app{min-height:0}
+  .tl{grid-template-columns:1fr;margin-left:7px}
+  .tl::before{left:7px;right:auto;top:0;bottom:0;width:2px;height:auto;background:linear-gradient(var(--indigo-2),var(--spark))}
+  .tl li{padding:0 0 30px 40px}
+  .ring-node text{font-size:15px}
+  .ring-center h3{font-size:20px}.ring-center p{font-size:13.5px}
+  .plate dl{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- Line-art generator set (engine + alternator on skid) -->
+    <symbol id="genset" viewBox="0 0 1000 400">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        <rect x="30" y="350" width="940" height="24" rx="3" fill="currentColor" fill-opacity=".07"/>
+        <path d="M30 362H970" opacity=".5"/>
+        <path d="M70 374v14h44v-14M886 374v14h44v-14"/>
+        <rect x="48" y="104" width="128" height="246" rx="8" fill="currentColor" fill-opacity=".05"/>
+        <path d="M64 122V332M76 122V332M88 122V332M100 122V332M112 122V332M124 122V332M136 122V332M148 122V332M160 122V332" opacity=".4"/>
+        <circle cx="112" cy="227" r="48" stroke-dasharray="4 5" opacity=".75"/>
+        <circle cx="112" cy="227" r="10"/>
+        <path d="M176 140C204 140 204 170 228 170" stroke-width="7" opacity=".5"/>
+        <rect x="222" y="58" width="58" height="76" rx="14" fill="currentColor" fill-opacity=".06"/>
+        <path d="M232 76h38M232 90h38M232 104h38M232 118h38" opacity=".45"/>
+        <path d="M222 336V206L262 166H612L652 206V336Z" fill="currentColor" fill-opacity=".08"/>
+        <rect x="270" y="132" width="34" height="34" rx="5"/><rect x="312" y="132" width="34" height="34" rx="5"/><rect x="354" y="132" width="34" height="34" rx="5"/><rect x="396" y="132" width="34" height="34" rx="5"/>
+        <rect x="438" y="132" width="34" height="34" rx="5"/><rect x="480" y="132" width="34" height="34" rx="5"/><rect x="522" y="132" width="34" height="34" rx="5"/><rect x="564" y="132" width="34" height="34" rx="5"/>
+        <path d="M266 124H604" stroke-width="6" opacity=".6"/>
+        <circle cx="352" cy="88" r="30" fill="currentColor" fill-opacity=".07"/><circle cx="352" cy="88" r="13"/><path d="M352 58a30 30 0 0 1 30 30h16V68"/>
+        <circle cx="522" cy="88" r="30" fill="currentColor" fill-opacity=".07"/><circle cx="522" cy="88" r="13"/><path d="M522 58a30 30 0 0 0-30 30h-16V68"/>
+        <path d="M352 118v6M522 118v6" stroke-width="5"/>
+        <path d="M262 206H612" opacity=".5"/><path d="M236 236H638" opacity=".3"/>
+        <path d="M236 292H640" stroke-dasharray="10 7" stroke-width="2.5"/>
+        <circle cx="280" cy="292" r="9"/><circle cx="330" cy="292" r="9"/><circle cx="380" cy="292" r="9"/><circle cx="430" cy="292" r="9"/><circle cx="480" cy="292" r="9"/><circle cx="530" cy="292" r="9"/><circle cx="580" cy="292" r="9"/>
+        <path d="M246 336L264 348H610L628 336" fill="currentColor" fill-opacity=".05"/>
+        <path d="M652 186C700 196 708 230 708 262C708 296 700 326 652 338" fill="currentColor" fill-opacity=".05"/>
+        <rect x="708" y="168" width="236" height="172" rx="20" fill="currentColor" fill-opacity=".08"/>
+        <path d="M736 186V322M766 186V322M796 186V322M826 186V322M856 186V322M886 186V322M916 186V322" opacity=".4"/>
+        <path d="M944 196C962 206 962 302 944 312"/>
+        <rect x="760" y="116" width="124" height="52" rx="6" fill="currentColor" fill-opacity=".06"/>
+        <path d="M776 134h24M776 150h24"/><circle cx="852" cy="142" r="8"/>
+        <rect x="796" y="236" width="62" height="36" rx="3" opacity=".75"/>
+      </g>
+    </symbol>
+    <linearGradient id="arcg" x1="1" x2="0"><stop offset="0" stop-color="#FFB23F"/><stop offset="1" stop-color="#7A70FF"/></linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".6" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <mask id="reflMask" maskUnits="userSpaceOnUse" x="0" y="470" width="1400" height="160"><rect x="0" y="470" width="1400" height="160" fill="url(#fade)"/></mask>
+    <linearGradient id="floorFade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7A70FF" stop-opacity=".5"/><stop offset="1" stop-color="#7A70FF" stop-opacity="0"/></linearGradient>
+    <linearGradient id="beam" x1="0" x2="1"><stop offset="0" stop-color="#FFB23F" stop-opacity="0"/><stop offset=".5" stop-color="#FFB23F" stop-opacity=".55"/><stop offset="1" stop-color="#FFB23F" stop-opacity="0"/></linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="LP SeaSpark home">
+      <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" rx="9" fill="#3D2EE6"/><path d="M18 6l2.6 8.6L29 18l-8.4 3.4L18 30l-2.6-8.6L7 18l8.4-3.4Z" fill="#FFB23F"/></svg>
+      <span><b>SeaSpark</b><small>Hainan Longpan Oilfield Technology</small></span>
+    </a>
+    <ul>
+      <li><a href="#why">Bonded Repair</a></li>
+      <li><a href="#units">Remanufactured Units</a></li>
+      <li><a href="#cycle">Power Plants</a></li>
+      <li><a href="#apps">Oilfield</a></li>
+      <li><a href="#miles">About</a></li>
+    </ul>
+    <span class="lang">EN</span>
+    <a class="btn btn-spark" href="#contact">Get a quote</a>
+  </div>
+</header>
+
+<main id="top">
+<!-- ================= HERO ================= -->
+<section class="hero dark">
+  <canvas id="sparks" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="pilot"><i><svg viewBox="0 0 24 24" fill="none" stroke="#1A1205" stroke-width="3.2"><path d="M5 12l5 5L20 7"/></svg></i>Hainan's first government-approved off-zone bonded repair pilot</div>
+    <h1>Bonded overhaul.<span>Remanufactured power.</span></h1>
+    <div class="hero-row">
+      <p class="sub">From Hainan Free Trade Port, we repair your engines duty-free and re-export them, and we ship generator sets rebuilt and load-tested to 110%. One partner from certification to EPC and long-term O&amp;M.</p>
+      <div class="hero-cta">
+        <a class="btn btn-spark" href="#contact">Get a quote</a>
+        <a class="btn btn-ghost" href="#why">How bonded repair works</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="art wrap">
+    <svg viewBox="0 0 1400 600" role="img" aria-label="Line drawing of a remanufactured generator set with callouts for each rebuild step">
+      <!-- floor -->
+      <g opacity=".9">
+        <path d="M0 478H1400" stroke="rgba(122,112,255,.55)" stroke-width="1.2"/>
+        <g stroke="url(#floorFade)" stroke-width="1" fill="none">
+          <path d="M700 478L-500 640M700 478L-200 640M700 478L100 640M700 478L400 640M700 478L700 640M700 478L1000 640M700 478L1300 640M700 478L1600 640M700 478L1900 640"/>
+          <path d="M0 496H1400M0 520H1400M0 552H1400M0 594H1400" opacity=".7"/>
+        </g>
+      </g>
+      <!-- reflection -->
+      <g mask="url(#reflMask)"><use href="#genset" x="200" y="-14" width="1000" height="400" transform="matrix(1 0 0 -1 0 956)" style="color:#A9A3FF"/></g>
+      <!-- genset -->
+      <use href="#genset" x="200" y="90" width="1000" height="400" style="color:#A9A3FF" filter="url(#glow)"/>
+      <!-- scanning beam -->
+      <clipPath id="scan"><rect id="scanRect" x="150" y="0" width="110" height="600"><animate attributeName="x" values="150;1150;150" dur="9s" repeatCount="indefinite"/></rect></clipPath>
+      <g clip-path="url(#scan)"><use href="#genset" x="200" y="90" width="1000" height="400" style="color:#FFB23F" filter="url(#glow)"/></g>
+      <rect x="150" y="70" width="110" height="420" fill="url(#beam)" opacity=".35"><animate attributeName="x" values="150;1150;150" dur="9s" repeatCount="indefinite"/></rect>
+
+      <!-- callouts -->
+      <g class="co">
+        <path class="ln" d="M262 150H500L552 178" stroke="rgba(169,163,255,.7)"/>
+        <circle cx="552" cy="178" r="5" fill="#FFB23F"/><circle class="pulse" cx="552" cy="178" r="5" fill="none" stroke="#FFB23F"/>
+        <rect class="co-box" x="20" y="112" width="242" height="76" rx="12"/>
+        <text class="co-n" x="40" y="140">01</text><text class="co-t" x="68" y="140">Wear parts replaced</text>
+        <text class="co-s" x="40" y="164">Filters, sensors, turbo kits</text>
+
+        <path class="ln" d="M262 446H568L630 382" stroke="rgba(169,163,255,.7)"/>
+        <circle cx="630" cy="382" r="5" fill="#FFB23F"/><circle class="pulse" cx="630" cy="382" r="5" fill="none" stroke="#FFB23F"/>
+        <rect class="co-box" x="20" y="408" width="242" height="76" rx="12"/>
+        <text class="co-n" x="40" y="436">02</text><text class="co-t" x="68" y="436">Crankshaft repaired</text>
+        <text class="co-s" x="40" y="460">Precision repair of core parts</text>
+
+        <path class="ln" d="M1138 344H1080L1026 344" stroke="rgba(169,163,255,.7)"/>
+        <circle cx="1026" cy="344" r="5" fill="#FFB23F"/><circle class="pulse" cx="1026" cy="344" r="5" fill="none" stroke="#FFB23F"/>
+        <rect class="co-box" x="1138" y="306" width="242" height="76" rx="12"/>
+        <text class="co-n" x="1158" y="334">03</text><text class="co-t" x="1186" y="334">Stator restored</text>
+        <text class="co-s" x="1158" y="358">Repaired, insulation tested</text>
+
+        <path class="ln" d="M1138 120H1060L1022 206" stroke="rgba(169,163,255,.7)"/>
+        <circle cx="1022" cy="206" r="5" fill="#FFB23F"/><circle class="pulse" cx="1022" cy="206" r="5" fill="none" stroke="#FFB23F"/>
+        <rect class="co-box" x="1138" y="74" width="242" height="92" rx="12" style="stroke:rgba(255,178,63,.7)"/>
+        <text class="co-n" x="1158" y="102">04</text><text class="co-t" x="1186" y="102">Load-tested to <tspan id="coLoad" fill="#FFB23F">110%</tspan></text>
+        <text class="co-s" x="1158" y="126">50 → 70 → 100 → 110% load</text>
+        <text class="co-s" x="1158" y="148">Report ships with the unit</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="facts">
+    <div class="wrap">
+      <div class="fact"><b class="num">2013</b><span>Founded in Hainan, China</span></div>
+      <div class="fact"><b class="num">120,000 m<sup>2</sup></b><span>Workshops and test bench</span></div>
+      <div class="fact"><b class="num">380+</b><span>Engineers, technicians and staff</span></div>
+      <div class="fact hl"><b class="num">No. 1</b><span>Off-zone bonded repair pilot in Hainan, approved Aug 2025</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY HAINAN ================= -->
+<section class="why dark" id="why">
+  <div class="wrap why-grid">
+    <div class="map">
+      <svg viewBox="0 0 1000 {{H}}" role="img" aria-label="Routes from Hainan to Southeast Asia, the Middle East, Africa and Central Asia">
+        <path class="dots" d="{{DOTS}}"/>
+        {{ARCS}}
+      </svg>
+    </div>
+    <div>
+      <h2>Hainan Free Trade Port, open for repair</h2>
+      <p class="sub def">Bonded repair lets your equipment enter China under customs supervision, be overhauled in our facility and ship back out, with no import duty on the equipment. You pay for the overhaul, not for the border.</p>
+      <ul class="why-list">
+        <li><b class="num">0%</b><span>Import duty on the equipment while it is under bond</span></li>
+        <li><b class="num">5 steps</b><span>From contract to re-export, each with a committed date</span></li>
+        <li><b class="num">15</b><span>Frac-truck engines overhauled under bond in August 2026</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= JOURNEY ================= -->
+<section class="journey light">
+  <div class="wrap">
+    <div class="journey-head">
+      <h2>Your engine's round trip</h2>
+      <p class="sub">Marine main engines, generator sets, frac-truck and mining engines. The engine travels, and your vessel or site stays in business.</p>
+    </div>
+    <div class="track">
+      <svg class="rail" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M30 68C200 68 200 68 400 68S800 68 970 68" fill="none" stroke="#C9CDE0" stroke-width="2" vector-effect="non-scaling-stroke"/>
+        <path id="railPath" d="M30 68H970" fill="none" stroke="url(#arcg)" stroke-width="3" stroke-dasharray="8 8" vector-effect="non-scaling-stroke"><animate attributeName="stroke-dashoffset" values="0;-32" dur="1.2s" repeatCount="indefinite"/></path>
+      </svg>
+      <ol class="stops">
+        <li class="stop"><span class="pt">1</span><span class="where">Your site</span><h3>Contract and authorization</h3><p>Send model, hours and nameplate photos. We confirm scope and paperwork.</p></li>
+        <li class="stop port"><span class="pt">2</span><span class="where">Hainan port</span><h3>Bonded entry</h3><p>The unit clears into the bonded zone with no import duty assessed.</p></li>
+        <li class="stop"><span class="pt">3</span><span class="where">SeaSpark workshop</span><h3>Teardown and inspection</h3><p>Full disassembly, a written condition report and a fixed quote.</p></li>
+        <li class="stop"><span class="pt">4</span><span class="where">SeaSpark test bench</span><h3>Overhaul and test run</h3><p>Core parts repaired or replaced, then run under load on our bench.</p></li>
+        <li class="stop port"><span class="pt">5</span><span class="where">Back to you</span><h3>Re-export</h3><p>Shipped home with the test report and customs documents.</p></li>
+      </ol>
+    </div>
+    <div class="swap">
+      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 24h36l-9-9M52 40H16l9 9"/></svg>
+      <div><h3>Exchange first, repair later</h3><p>Can't wait for the round trip? We ship an exchange engine to you first, then your old unit comes to Hainan for overhaul.</p></div>
+      <a class="btn btn-spark" href="#contact">Ask about exchange units</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LIFECYCLE ================= -->
+<section class="cycle dark" id="cycle">
+  <div class="wrap">
+    <div class="cycle-copy">
+      <h2>One partner for the whole life of your equipment</h2>
+      <p class="sub">Most suppliers sell a unit and stop there. We certify it, rebuild it, ship it, take back your old one, build the plant around it, invest alongside you and keep it running.</p>
+      <div class="chain"><span>Used gas gensets</span><span>Remanufacturing</span><span>Trade-in</span><span>EPC turnkey</span><span>Plant investment</span><span>O&amp;M</span></div>
+    </div>
+    <div class="ring-wrap">
+      <svg viewBox="-20 -20 580 580" id="ring" role="group" aria-label="Equipment lifecycle stages"></svg>
+      <div class="ring-center" aria-live="polite"><h3 id="ringT"></h3><p id="ringD"></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REMAN ================= -->
+<section class="reman light" id="reman">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Remanufactured means rebuilt and proven</h2>
+      <p class="sub">A used unit is sold as found. A SeaSpark unit is taken apart, rebuilt to a six-step standard and load-tested, with the evidence in your hands.</p>
+    </div>
+    <div class="reman-grid">
+      <ol class="steps6">
+        <li><div><h3>Inspection and evaluation</h3><p>Measure wear on core components and issue a written evaluation report.</p></div></li>
+        <li><div><h3>Disassembly and cleaning</h3><p>Separate engine, alternator and controls; clean and sort reusable parts.</p></div></li>
+        <li><div><h3>Core component repair</h3><p>Precision repair of crankshafts and stators; replace filters, sensors and wear parts.</p></div></li>
+        <li><div><h3>System and enclosure renewal</h3><p>Rust removal and repaint; rework electrical, fuel and oil circuits.</p></div></li>
+        <li><div><h3>Performance testing</h3><p>No-load, step-load and protection tests at 50, 70, 100 and 110% load.</p></div></li>
+        <li><div><h3>Certification and records</h3><p>Remanufacture nameplate, certificate of conformity and an electronic file per unit.</p></div></li>
+      </ol>
+      <div class="loadcard">
+        <h3>Load test, step by step</h3>
+        <p>Output held at each step on our test bench. The last step runs the unit beyond its rating.</p>
+        <div class="bars">
+          <div class="rated"><span>Rated output</span></div>
+          <div class="bar"><b class="num">50%</b><i style="height:37.3%"></i></div>
+          <div class="bar"><b class="num">70%</b><i style="height:52.2%"></i></div>
+          <div class="bar"><b class="num">100%</b><i style="height:74.5%"></i></div>
+          <div class="bar"><b class="num">110%</b><i style="height:82%"></i></div>
+        </div>
+        <div class="bars-x"><span>Warm-up</span><span>Partial</span><span>Rated</span><span>Overload</span></div>
+        <div class="plate" aria-label="Sample remanufacture nameplate">
+          <div class="plate-h"><span>Remanufactured</span><em>SeaSpark</em></div>
+          <dl>
+            <div><dt>Model</dt><dd>SS-KTA50-G8</dd></div>
+            <div><dt>Prime power</dt><dd>1,200 kW</dd></div>
+            <div><dt>Voltage</dt><dd>400 V</dd></div>
+            <div><dt>Load test</dt><dd>50–110%</dd></div>
+            <div><dt>Certificate</dt><dd>Included</dd></div>
+            <div><dt>Origin</dt><dd>Hainan, CN</dd></div>
+          </dl>
+        </div>
+        <p class="plate-cap">Sample nameplate. Each unit carries its own serial number and test date.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= UNITS ================= -->
+<section class="units dark" id="units">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Remanufactured units, ready to ship</h2>
+      <p class="sub">Cummins-powered sets rebuilt in Hainan and tested from 50 to 110% load before they leave.</p>
+    </div>
+    <div class="unit-grid">
+      <article class="unit flag">
+        <div class="unit-art"><svg viewBox="0 0 1000 400" aria-hidden="true"><use href="#genset" width="1000" height="400"/></svg></div>
+        <span class="unit-tag">Cummins QSK60</span><h3>SS-QSK60-G8</h3>
+        <div class="unit-pw"><b>1,800</b><small>kW</small></div>
+        <div class="unit-spec"><span>Voltage<b>400 V</b></span><span>Load test<b>50–110%</b></span></div>
+      </article>
+      <article class="unit">
+        <div class="unit-art" style="--sz:90%"><svg viewBox="0 0 1000 400" aria-hidden="true"><use href="#genset" width="1000" height="400"/></svg></div>
+        <span class="unit-tag">Cummins QSK50</span><h3>SS-QSK50-G4</h3>
+        <div class="unit-pw"><b>1,370</b><small>kW</small></div>
+        <div class="unit-spec"><span>Voltage<b>400 V</b></span><span>Load test<b>50–110%</b></span></div>
+      </article>
+      <article class="unit">
+        <div class="unit-art" style="--sz:84%"><svg viewBox="0 0 1000 400" aria-hidden="true"><use href="#genset" width="1000" height="400"/></svg></div>
+        <span class="unit-tag">Cummins KTA50</span><h3>SS-KTA50-G8</h3>
+        <div class="unit-pw"><b>1,200</b><small>kW</small></div>
+        <div class="unit-spec"><span>Voltage<b>400 V</b></span><span>Load test<b>50–110%</b></span></div>
+      </article>
+      <article class="unit">
+        <div class="unit-art" style="--sz:66%"><svg viewBox="0 0 1000 400" aria-hidden="true"><use href="#genset" width="1000" height="400"/></svg></div>
+        <span class="unit-tag">Cummins NTA855</span><h3>SS-NTA855-G2A</h3>
+        <div class="unit-pw"><b>280</b><small>kW</small></div>
+        <div class="unit-spec"><span>Voltage<b>400 V</b></span><span>Load test<b>50–110%</b></span></div>
+      </article>
+    </div>
+    <div class="gas">
+      <p><b>Running on gas?</b> We also supply MTU and Caterpillar gas generator sets for associated gas, coalbed methane and biogas. Send us your fuel analysis and we will match the engine.</p>
+      <a class="btn btn-ghost" href="#contact">Send your requirements</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= APPLICATIONS ================= -->
+<section class="apps light" id="apps">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Built for the fuels and sites others skip</h2>
+      <p class="sub">Most exporters only sell diesel sets. We also run power plants on the gas you already have.</p>
+    </div>
+    <div class="app-grid">
+      <article class="app feature">
+        <span class="fuel">Associated gas, CBM</span>
+        <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 84h80M30 84l12-44 12 44M36 62h12M18 40h52"/><path d="M70 32c8 0 12 4 12 10s-4 10-12 10"/><circle cx="42" cy="40" r="4"/><path d="M76 84V60M74 22c0-6 4-8 4-14 3 4 6 8 6 12a5 5 0 0 1-10 2Z"/></svg>
+        <h3>Oil and gas fields</h3><p>Turn flared associated gas and coalbed methane into power for rigs and camps, and overhaul the power units that drive them.</p>
+      </article>
+      <article class="app">
+        <span class="fuel">Biogas</span>
+        <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 84h80M14 84a30 30 0 0 1 60 0"/><path d="M44 54V40h22v-8"/><path d="M66 32c0-5 3-7 3-12 3 3 5 7 5 10a4 4 0 0 1-8 2Z"/><path d="M26 72h36" opacity=".5"/></svg>
+        <h3>Biogas, landfill and wastewater</h3><p>Gas engines set up for variable methane content and contaminants.</p>
+      </article>
+      <article class="app">
+        <span class="fuel">Diesel or gas</span>
+        <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="12" y="14" width="22" height="70" rx="3"/><rect x="38" y="14" width="22" height="70" rx="3"/><rect x="64" y="14" width="22" height="70" rx="3"/><path d="M17 26h12M17 36h12M17 46h12M43 26h12M43 36h12M43 46h12M69 26h12M69 36h12M69 46h12"/><circle cx="23" cy="72" r="2"/><circle cx="49" cy="72" r="2"/><circle cx="75" cy="72" r="2"/></svg>
+        <h3>Data centers, hospitals and buildings</h3><p>Standby and prime power from load-tested units, with fast parts supply.</p>
+      </article>
+      <article class="app">
+        <span class="fuel">Gas or diesel</span>
+        <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 84h80M12 84V48l20 12V48l20 12V48l20 12V20h10v64"/><path d="M50 22l-8 14h10l-8 14"/></svg>
+        <h3>Industrial and off-grid plants</h3><p>Captive power for mines and industrial parks, from EPC to long-term O&amp;M.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MILESTONES ================= -->
+<section class="miles dark" id="miles">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Credentials you can check</h2>
+      <p class="sub">Every milestone is backed by an approval, a news report or an event record.</p>
+    </div>
+    <ol class="tl">
+      <li><time>2013</time><h3>Founded in Hainan</h3><p>Global trade in used gas generator sets begins.</p></li>
+      <li class="hot"><time>Aug 2025</time><h3>Bonded repair pilot approved</h3><p>First of its kind from the Hainan Provincial Government.</p></li>
+      <li><time>Dec 2025</time><h3>First bonded repair declared</h3><p>First overseas unit under the pilot, reported by China News.</p></li>
+      <li><time>Jun 2026</time><h3>Shanghai Power Exhibition</h3><p>25th International Power and Generating Sets Exhibition.</p></li>
+      <li class="hot"><time>Aug 2026</time><h3>15 frac-truck engines</h3><p>Overhauled under bond, reported by China News Service.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= CLOSING ================= -->
+<section class="close dark" id="contact">
+  <div class="wrap">
+    <h2>Send us the nameplate. We'll send back a plan.</h2>
+    <p class="sub">An engineer replies within 24 hours with questions, a repair plan or a quote.</p>
+    <div class="ways">
+      <a class="main" href="https://wa.me/8619389983512" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg><span>WhatsApp +86 193 8998 3512</span></a>
+      <a href="mailto:info@lpseaspark.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg><span>info@lpseaspark.com</span></a>
+      <a href="tel:+8615996277820"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span>+86 159 9627 7820</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="dark">
+  <div class="wrap">
+    <span>© 2026 Hainan Longpan Oilfield Technology Co., Ltd. (海南龙盘油田科技有限公司)</span>
+    <span>Hainan Free Trade Port, China</span>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('solid', scrollY > 40);
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  /* sparks */
+  const cv = document.getElementById('sparks'), ctx = cv.getContext('2d');
+  let W = 0, H = 0, parts = [], running = true;
+  const size = () => { const r = cv.getBoundingClientRect(), d = Math.min(devicePixelRatio || 1, 2); W = r.width; H = r.height; cv.width = W*d; cv.height = H*d; ctx.setTransform(d,0,0,d,0,0); };
+  const spawn = () => ({x: W*(.15+Math.random()*.7), y: H*(.62+Math.random()*.3), vx:(Math.random()-.5)*.5, vy:-(.3+Math.random()*1), life:0, max:140+Math.random()*180, r:.5+Math.random()*1.6});
+  function frame(){
+    if (!running) return;
+    ctx.clearRect(0,0,W,H); ctx.shadowColor='rgba(255,160,40,.9)'; ctx.shadowBlur=8;
+    for (const p of parts){ p.x+=p.vx; p.y+=p.vy; p.vx+=(Math.random()-.5)*.04; p.life++;
+      const a=Math.max(0,1-p.life/p.max); ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,6.283);
+      ctx.fillStyle=`rgba(255,${150+Math.floor(60*a)},63,${a*.85})`; ctx.fill();
+      if (p.life>p.max) Object.assign(p, spawn()); }
+    requestAnimationFrame(frame);
+  }
+  size(); addEventListener('resize', size);
+  parts = Array.from({length: innerWidth<760?24:60}, () => { const p = spawn(); p.life = Math.random()*p.max; return p; });
+  if (!reduce){ new IntersectionObserver(([e]) => { const was=running; running=e.isIntersecting; if(running&&!was) frame(); }).observe(cv); frame(); }
+  else { running=false; }
+
+  /* hero load callout */
+  const co = document.getElementById('coLoad'), seq = ['50%','70%','100%','110%']; let k = 3;
+  if (!reduce) setInterval(() => { k = (k+1)%4; co.textContent = seq[k]; }, 1400);
+
+  /* lifecycle ring */
+  const ST = [
+    ['Certify','Every incoming unit is inspected, graded and documented before we accept it.'],
+    ['Rebuild','Refurbished or fully remanufactured to our six-step standard, then load-tested.'],
+    ['Export','Packing, export documents and shipping to your port, with test reports attached.'],
+    ['Trade-in','We buy back ageing units against a remanufactured replacement.'],
+    ['EPC','Turnkey delivery: feasibility, design, equipment, installation and commissioning.'],
+    ['Invest','Co-investment in captive, industrial-park and off-grid power plants.'],
+    ['O&M','Long-term operation, scheduled maintenance, emergency repair and parts supply.']
+  ];
+  const ring = document.getElementById('ring'), C = 270, R = 214, CIRC = 2*Math.PI*R;
+  const esc = s => s.replace(/&/g,'&amp;');
+  let h = `<circle cx="${C}" cy="${C}" r="${R}" fill="none" stroke="rgba(154,163,199,.22)" stroke-width="1.5"/>
+    <circle cx="${C}" cy="${C}" r="${R-34}" fill="none" stroke="rgba(154,163,199,.12)" stroke-width="1" stroke-dasharray="2 6"/>
+    <circle id="rp" cx="${C}" cy="${C}" r="${R}" fill="none" stroke="url(#arcg)" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="${CIRC}" stroke-dashoffset="${CIRC}" transform="rotate(-90 ${C} ${C})" style="transition:stroke-dashoffset .7s ease"/>`;
+  ST.forEach(([n], i) => { const a = -Math.PI/2 + i*2*Math.PI/ST.length, x = C+R*Math.cos(a), y = C+R*Math.sin(a);
+    h += `<g class="rn" tabindex="0" role="button" data-i="${i}" aria-label="${esc(n)}"><circle cx="${x}" cy="${y}" r="46"/><text class="n" x="${x}" y="${y-3}">${i+1}</text><text x="${x}" y="${y+17}">${esc(n)}</text></g>`; });
+  ring.innerHTML = h;
+  const rp = document.getElementById('rp'), nodes = [...ring.querySelectorAll('.rn')], rt = document.getElementById('ringT'), rd = document.getElementById('ringD');
+  let sel = 0, auto;
+  const pick = i => { sel = i; nodes.forEach((n,j) => { n.classList.toggle('on', j===i); n.setAttribute('aria-pressed', j===i); });
+    rt.textContent = ST[i][0]; rd.textContent = ST[i][1]; rp.style.strokeDashoffset = CIRC*(1-(i+1)/ST.length); };
+  nodes.forEach(n => { const go = () => { clearInterval(auto); pick(+n.dataset.i); };
+    n.addEventListener('click', go); n.addEventListener('keydown', e => { if (e.key==='Enter'||e.key===' '){ e.preventDefault(); go(); } }); });
+  pick(1);
+  if (!reduce) auto = setInterval(() => pick((sel+1)%ST.length), 3200);
+})();
+</script>
+</body>
+</html>
