@@ -14,7 +14,7 @@
    chamfered corners, hazard stripes. Colours from the client's two sites:
    SeaSpark blue (lpseaspark.com) and FuDianKang signal orange + steel navy (fudiankang.com). */
 :root{
-  --logo:#2300A5; --logo-deep:#1A007C; --blue:#00119F; --blue-2:#1B2FD6; --blue-ink:#8C98FF;
+  --logo:#2300A5; --logo-deep:#1A007C; --blue:#2300A5; --blue-2:#3A1BD6; --blue-ink:#A493FF;
   --orange:#ED461C; --orange-2:#FF5A2E;
   --steel:#1F394C; --steel-2:#16293A; --night:#0B1116; --coal:#121A21;
   --ink:#111820; --ink-2:#47525C; --ink-3:#7D8790;
@@ -208,7 +208,7 @@ a:hover .link svg,.link:hover svg{transform:translateX(4px)}
 .unit .link{margin-top:auto;padding-top:26px;align-self:flex-start;border:0}
 .unit .link span{border-bottom:2px solid var(--orange);padding-bottom:6px}
 .gasline{display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between;margin-top:28px;padding:28px 32px;background:var(--blue);clip-path:polygon(0 0,100% 0,100% calc(100% - 22px),calc(100% - 22px) 100%,0 100%)}
-.gasline p{color:#D2D7FF;max-width:72ch;font-size:17px}
+.gasline p{color:#DAD3FF;max-width:72ch;font-size:17px}
 .gasline b{color:#fff;font:700 22px var(--f-head);text-transform:uppercase;letter-spacing:.02em;margin-right:6px}
 
 /* reman */
@@ -225,19 +225,19 @@ a:hover .link svg,.link:hover svg{transform:translateX(4px)}
 .load{background:var(--blue);color:#fff;padding:36px;display:flex;flex-direction:column;position:relative;overflow:hidden;clip-path:polygon(0 0,calc(100% - 34px) 0,100% 34px,100% 100%,0 100%)}
 .load::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:32px 32px}
 .load > *{position:relative;z-index:1}
-.load .kicker{color:#AEB6FF;margin-bottom:14px}
+.load .kicker{color:#B9ABFF;margin-bottom:14px}
 .load h3{font-size:38px}
-.load > p{color:#C9CEFF;font-size:15.5px;margin-top:12px}
+.load > p{color:#D2C9FF;font-size:15.5px;margin-top:12px}
 .bars-wrap{margin-top:auto;padding-top:40px}
 .bars{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:end;height:250px;border-bottom:2px solid #fff}
-.rated{position:absolute;left:0;right:0;bottom:74.5%;height:0;border-top:2px dashed rgba(255,255,255,.7);font:500 11px/1 var(--f-mono);text-transform:uppercase;letter-spacing:.1em;color:#C9CEFF;z-index:1}
+.rated{position:absolute;left:0;right:0;bottom:74.5%;height:0;border-top:2px dashed rgba(255,255,255,.7);font:500 11px/1 var(--f-mono);text-transform:uppercase;letter-spacing:.1em;color:#D2C9FF;z-index:1}
 .rated span{position:relative;top:8px}
 .bar{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:8px;height:100%}
 .bar i{display:block;width:100%;background:repeating-linear-gradient(0deg,#fff 0 8px,rgba(255,255,255,.82) 8px 10px)}
 .bar:last-child i{background:repeating-linear-gradient(0deg,var(--orange) 0 8px,#C93812 8px 10px)}
 .bar b{font:800 26px var(--f-head)}
 .bar:last-child b{color:#FFB79F}
-.bars-x{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:12px;font:500 11px var(--f-mono);text-transform:uppercase;letter-spacing:.08em;color:#AEB6FF;text-align:center}
+.bars-x{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:12px;font:500 11px var(--f-mono);text-transform:uppercase;letter-spacing:.08em;color:#B9ABFF;text-align:center}
 .cert{display:flex;gap:14px;align-items:center;margin-top:28px;padding:16px 18px;background:rgba(0,0,0,.22);border-left:4px solid var(--orange);font-size:15px}
 .cert svg{width:30px;height:30px;flex:none;color:var(--orange)}
 
@@ -258,7 +258,7 @@ a:hover .link svg,.link:hover svg{transform:translateX(4px)}
 .app p{font-size:15.5px;color:#C1CAD1;margin-top:8px;max-width:44ch}
 .app.text{background:var(--blue);justify-content:space-between;padding:32px}
 .app.text::before,.app.text::after{display:none}
-.app.text ul{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:10px;font-size:16px;color:#DCE0FF}
+.app.text ul{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:10px;font-size:16px;color:#E2DCFF}
 .app.text li{display:flex;gap:12px;align-items:baseline}
 .app.text li::before{content:"";width:10px;height:3px;background:var(--orange);flex:none;transform:translateY(-4px)}
 
@@ -315,11 +315,11 @@ a:hover .link svg,.link:hover svg{transform:translateX(4px)}
 /* closing */
 .closing{position:relative;color:#fff;overflow:hidden;isolation:isolate;background:var(--blue);border-top:10px solid transparent;border-image:var(--hazard) 10}
 .closing > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;opacity:.35;filter:grayscale(1)}
-.closing::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(110deg,rgba(0,17,159,.97) 0%,rgba(0,17,159,.88) 55%,rgba(0,17,159,.6) 100%)}
+.closing::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(110deg,rgba(35,0,165,.97) 0%,rgba(35,0,165,.88) 55%,rgba(35,0,165,.6) 100%)}
 .closing::after{content:"";position:absolute;left:54%;top:-20%;width:2px;height:150%;background:rgba(255,255,255,.25);transform:rotate(24deg);z-index:-1}
 .closing .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:64px;align-items:center;padding-block:120px}
 .closing h2{font-size:clamp(44px,5.8vw,88px)}
-.closing .lead{color:#D2D7FF;margin-top:22px}
+.closing .lead{color:#DAD3FF;margin-top:22px}
 .ways{display:grid;gap:6px}
 .ways a{display:flex;align-items:center;gap:18px;padding:22px 26px;background:rgba(11,17,22,.35);border:1px solid rgba(255,255,255,.22);transition:background .2s}
 .ways a:hover{background:rgba(11,17,22,.6)}
@@ -694,7 +694,7 @@ footer a:hover{color:#fff}
 <!-- CLOSING -->
 <section class="closing" id="contact"><img src="images/hero-offshore.jpg" alt=""><div class="wrap">
   <div>
-    <div class="kicker" style="color:#C9CEFF"><b>09</b>Contact</div>
+    <div class="kicker" style="color:#D2C9FF"><b>09</b>Contact</div>
     <h2>Send us the nameplate. We'll send back a plan.</h2>
     <p class="lead">An engineer replies within 24 hours with questions, a repair plan or a quote.</p>
   </div>
