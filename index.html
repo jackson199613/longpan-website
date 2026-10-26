@@ -82,6 +82,20 @@ p{margin:0}
 .dots button[aria-current=true]::before{animation:prog 6.5s linear forwards}
 @keyframes prog{to{transform:scaleX(1)}}
 
+
+/* light slide (bright test hall) */
+.slide.light{color:var(--ink);background:#F3F6FC}
+.slide.light img{left:24%;width:76%}
+.slide.light::after{background:linear-gradient(90deg,#F3F6FC 0%,#F3F6FC 24%,rgba(243,246,252,.85) 34%,rgba(243,246,252,0) 52%)}
+.slide.light .h1{color:var(--ink)}
+.slide.light .h1 em{font-style:normal;color:var(--brand)}
+.slide.light p{color:var(--ink-2)}
+.slide.light .tag{background:var(--brand-tint);border-color:rgba(34,0,166,.25);color:var(--brand)}
+.hero.is-light .dots{border-top-color:rgba(10,18,64,.12);background:linear-gradient(0deg,rgba(255,255,255,.75),transparent)}
+.hero.is-light .dots button{color:var(--ink-3)}
+.hero.is-light .dots button b{color:var(--ink-3)}
+.hero.is-light .dots button[aria-current=true]{color:var(--ink)}
+.hero.is-light .dots button[aria-current=true] b{color:var(--spark)}
 /* stats */
 .stats{position:relative;z-index:5;background:#fff}
 .stats .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:#fff;border-radius:0 0 22px 22px;box-shadow:0 30px 60px -36px rgba(10,18,64,.35);border:1px solid var(--line);border-top:0;max-width:calc(var(--wrap) - 2*var(--gut));padding-inline:0}
@@ -300,6 +314,8 @@ footer a:hover{color:#fff}
   .slide p{font-size:16px}
   .marquee small{display:none}
   .slide::after{background:linear-gradient(180deg,rgba(var(--shade),.5),rgba(var(--shade),.9))}
+  .slide.light img{left:0;width:100%}
+  .slide.light::after{background:linear-gradient(180deg,rgba(255,255,255,.94) 0%,rgba(255,255,255,.85) 55%,rgba(255,255,255,.2) 100%)}
   .stats .wrap{grid-template-columns:1fr 1fr}
   .stat{padding:26px 10px}.stat:nth-child(3){border-left:0}.stat:nth-child(n+3){border-top:1px solid var(--line)}
   .unit-grid,.steps,.perks{grid-template-columns:1fr}
@@ -319,11 +335,12 @@ footer a:hover{color:#fff}
 /* intro: test-bench ignition, then bay doors open onto the hero */
 .intro{position:fixed;inset:0;z-index:100;pointer-events:auto}
 .intro .door{position:absolute;left:0;right:0;height:50.5%;background:#060A22;overflow:hidden;transition:transform 1s cubic-bezier(.76,0,.24,1)}
-.intro .door .ph{position:absolute;left:0;right:0;height:100vh;height:100lvh}
+.intro .door .ph{position:absolute;left:0;right:0;height:100vh;height:100lvh;display:flex;justify-content:center;background:radial-gradient(50% 40% at 50% 66%,rgba(255,138,31,.12),transparent 70%),#060A22}
 .intro .door.t .ph{top:0}.intro .door.b .ph{bottom:0}
-.intro .door .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 38%;transform:scale(1.12);animation:introZoom 3.2s cubic-bezier(.2,.7,.2,1) forwards}
-.intro .door .ph::after{content:"";position:absolute;inset:0;background:radial-gradient(55% 45% at 50% 62%,rgba(6,10,34,.25),rgba(6,10,34,.9) 100%),linear-gradient(180deg,rgba(6,10,34,.75) 0%,rgba(34,0,166,.15) 45%,rgba(6,10,34,.6) 100%)}
+.intro .door .ph img{position:absolute;left:50%;translate:-50% 0;width:min(62vw,1000px);height:auto;max-width:none;top:calc(100vh * .67 - min(62vw,1000px) * .945);-webkit-mask-image:radial-gradient(ellipse 50% 46% at 50% 63%,#000 58%,transparent 100%);mask-image:radial-gradient(ellipse 50% 46% at 50% 63%,#000 58%,transparent 100%);transform:scale(1.1);transform-origin:50% 63%;animation:introZoom 3.2s cubic-bezier(.2,.7,.2,1) forwards}
+.intro .door .ph::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 55% at 50% 64%,rgba(6,10,34,0),rgba(6,10,34,.75) 100%),linear-gradient(180deg,rgba(6,10,34,.55) 0%,rgba(6,10,34,0) 45%,rgba(6,10,34,.35) 100%)}
 @keyframes introZoom{to{transform:scale(1)}}
+@media (max-aspect-ratio:3/4){.intro .door .ph img{position:static;translate:none;top:auto;width:100%;height:100%;object-fit:cover;-webkit-mask-image:none;mask-image:none}}
 .intro .door.t{top:0;border-bottom:1px solid rgba(255,138,31,.0)}
 .intro .door.b{bottom:0}
 .intro .door::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:64px 64px}
@@ -331,7 +348,7 @@ footer a:hover{color:#fff}
 @keyframes sweep{to{left:100%}}
 .intro .cap{margin-top:26px;font-size:13px;letter-spacing:.06em;color:#C9C6EE;opacity:0;animation:inUp .5s .5s ease forwards}
 .intro .seam{position:absolute;left:0;right:0;top:50%;height:2px;margin-top:-1px;background:linear-gradient(90deg,transparent,var(--spark) 20%,#FFE2B8 50%,var(--spark) 80%,transparent);transform:scaleX(0);opacity:0;z-index:2;box-shadow:0 0 24px 4px rgba(255,138,31,.7)}
-.intro .core{position:absolute;left:50%;top:27%;transform:translate(-50%,-50%);width:min(520px,84vw);text-align:center;z-index:3;color:#fff;transition:opacity .35s,transform .35s}
+.intro .core{position:absolute;left:50%;top:23%;transform:translate(-50%,-50%);width:min(520px,84vw);text-align:center;z-index:3;color:#fff;transition:opacity .35s,transform .35s}
 .intro .core img{height:64px;width:auto;margin:0 auto 34px;opacity:0;transform:translateY(10px);animation:inUp .6s .1s ease forwards}
 .intro .row{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;color:#A9A6CF;opacity:0;animation:inUp .5s .3s ease forwards}
 .intro .row b{font:800 34px/1 var(--f-head);color:#fff;font-variant-numeric:tabular-nums}
@@ -366,7 +383,7 @@ footer a:hover{color:#fff}
 <body>
 
 <div class="intro" id="intro" aria-hidden="true" hidden>
-  <div class="door t"><div class="ph"><img src="images/hero-genset.jpg" alt=""></div></div><div class="door b"><div class="ph"><img src="images/hero-genset.jpg" alt=""></div></div><div class="sweep"></div><div class="seam"></div>
+  <div class="door t"><div class="ph"><img src="images/intro.jpg" alt=""></div></div><div class="door b"><div class="ph"><img src="images/intro.jpg" alt=""></div></div><div class="sweep"></div><div class="seam"></div>
   <div class="core">
     <img src="images/logo-white.png" alt="">
     <div class="row"><span>Load test</span><b id="introPct">0%</b></div>
@@ -400,7 +417,7 @@ footer a:hover{color:#fff}
 <!-- HERO -->
 <section class="hero" aria-roledescription="carousel" aria-label="Highlights">
   <div class="slide on">
-    <img src="images/hero-offshore.jpg" alt="Offshore drilling rig serviced by a supply vessel at sunset">
+    <img src="images/hero-1.jpg" alt="Marine engine being overhauled in a harbourside workshop at sunset" style="object-position:60% 50%">
     <div class="wrap">
       <span class="tag">Hainan's first government-approved off-zone bonded repair pilot</span>
       <h1>Bonded engine overhaul from Hainan Free Trade Port</h1>
@@ -408,17 +425,17 @@ footer a:hover{color:#fff}
       <div class="cta"><a class="btn btn-spark" href="#contact">Get a quote</a><a class="btn btn-white" href="#bonded">How bonded repair works</a></div>
     </div>
   </div>
-  <div class="slide">
-    <img src="images/hero-genset.jpg" alt="Remanufactured gas generator set">
+  <div class="slide light">
+    <img src="images/hero-2.jpg" alt="Remanufactured generator set in a bright test hall" style="object-position:70% 50%">
     <div class="wrap">
       <span class="tag">SeaSpark remanufactured</span>
-      <div class="h1">Generator sets rebuilt and load-tested to 110%</div>
+      <div class="h1">Generator sets rebuilt and load-tested to <em>110%</em></div>
       <p>Cummins KTA50, QSK50, QSK60 and NTA855 units, rebuilt to our standard with a test report and certificate for every unit.</p>
-      <div class="cta"><a class="btn btn-spark" href="#units">View units</a><a class="btn btn-white" href="#reman">Our standard</a></div>
+      <div class="cta"><a class="btn btn-brand" href="#units">View units</a><a class="btn btn-line" href="#reman">Our standard</a></div>
     </div>
   </div>
   <div class="slide">
-    <img src="images/hero-plant.jpg" alt="Industrial power plant by a river">
+    <img src="images/hero-3.jpg" alt="Gas engine power plant hall at dusk" style="object-position:65% 50%">
     <div class="wrap">
       <span class="tag">EPC, investment and O&amp;M</span>
       <div class="h1">Power plants built, financed and kept running</div>
@@ -450,7 +467,7 @@ footer a:hover{color:#fff}
   <div class="biz" data-rv="2">
     <a class="card star active" href="#bonded"><img src="images/biz-bonded.jpg" alt="Engine overhaul in the workshop"><span class="flag">Only in Hainan</span>
       <div class="body"><span class="no">01</span><h3>Bonded overhaul</h3><p>Duty-free repair and re-export for marine, genset and frac-truck engines.</p><span class="more">How it works <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div></a>
-    <a class="card" href="#units"><img src="images/biz-reman.jpg" alt="Cummins generator set in the SeaSpark workshop">
+    <a class="card" href="#units"><img src="images/intro.jpg" alt="Remanufactured generator set" style="object-position:50% 66%">
       <div class="body"><span class="no">02</span><h3>Remanufactured gensets</h3><p>Used gas and diesel sets rebuilt, load-tested and certified.</p><span class="more">View units <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div></a>
     <a class="card" href="#apps"><img src="images/biz-power.jpg" alt="Industrial gas facility">
       <div class="body"><span class="no">03</span><h3>Power plant solutions</h3><p>EPC turnkey builds, co-investment and long-term O&amp;M.</p><span class="more">See solutions <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div></a>
@@ -635,7 +652,8 @@ footer a:hover{color:#fff}
 (() => {
   const slides = [...document.querySelectorAll('.slide')], dots = [...document.querySelectorAll('.dots button')];
   let cur = 0, t;
-  const show = i => { cur = i; slides.forEach((s,k) => s.classList.toggle('on', k === i)); dots.forEach((d,k) => d.setAttribute('aria-current', k === i)); };
+  const hero = document.querySelector('.hero');
+  const show = i => { cur = i; slides.forEach((s,k) => s.classList.toggle('on', k === i)); dots.forEach((d,k) => d.setAttribute('aria-current', k === i)); hero.classList.toggle('is-light', slides[i].classList.contains('light')); };
   const start = () => { if (!matchMedia('(prefers-reduced-motion: reduce)').matches) t = setInterval(() => show((cur + 1) % slides.length), 6500); };
   const re = () => dots.forEach(d => { if (d.getAttribute('aria-current') === 'true') { d.style.animation = 'none'; void d.offsetWidth; d.style.animation = ''; } });
   dots.forEach((d,i) => d.addEventListener('click', () => { clearInterval(t); show(i); start(); }));
