@@ -194,6 +194,7 @@ const WA = "8619389983512";
   modal.addEventListener('click', e => { if (e.target === modal) close(); });
   addEventListener('keydown', e => { if (!modal.classList.contains('on')) return; if (e.key === 'Escape') close(); if (e.key === 'ArrowLeft') show(idx - 1); if (e.key === 'ArrowRight') show(idx + 1); });
   if (location.hash.length > 1) open(location.hash.slice(1));
+  addEventListener('hashchange', () => { const h = location.hash.slice(1); if (h && UNITS.some(u => u.id === h)) open(h); });
 })();
 </script>
 </body>
